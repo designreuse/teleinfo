@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.group3s.urubu</groupId>
-	<artifactId>urubu-webapp</artifactId>
+	<artifactId>urubu-teleinfo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>urubu-webapp</name>
+	<name>urubu-teleinfo</name>
 	<description>urubu webapp</description>
 
 	<parent> 
@@ -50,7 +50,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<start-class>com.group3s.urubu.web.UrubuApplication</start-class>
+		<start-class>com.group3s.urubu.UrubuApplication</start-class>
 		<java.version>1.7</java.version>
 	</properties>
 
