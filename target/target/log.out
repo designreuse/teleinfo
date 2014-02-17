@@ -110,3 +110,5 @@ Caused by: java.net.BindException: Address already in use
 2014-02-16 21:43:29.643  INFO 15442 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2014-02-16 21:43:29.706  INFO 15442 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
 2014-02-16 21:43:29.711  INFO 15442 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 7.54 seconds (JVM running for 8.491)
+2014-02-16 22:26:51.432  INFO 15442 [Thread-2] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6de17d0b: startup date [Sun Feb 16 21:43:23 CET 2014]; root of context hierarchy
+2014-02-16 22:26:51.451  INFO 15442 [Thread-2] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

@@ -1,82 +1,13 @@
-2014-02-15 18:24:51.003  INFO 13656 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 13656 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-15 18:24:51.066  INFO 13656 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sat Feb 15 18:24:51 CET 2014]; root of context hierarchy
-2014-02-15 18:24:52.709  INFO 13656 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-15 18:24:53.095  INFO 13656 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-15 18:24:53.096  INFO 13656 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-15 18:24:53.294  INFO 13656 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-15 18:24:53.295  INFO 13656 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2235 ms
-2014-02-15 18:24:54.872  INFO 13656 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 18:24:54.975  INFO 13656 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-15 18:24:54.975  INFO 13656 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-15 18:24:54.976  INFO 13656 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-15 18:24:54.977  INFO 13656 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-15 18:24:54.986  INFO 13656 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-15 18:24:54.991  INFO 13656 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-15 18:24:55.007  INFO 13656 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 18:24:55.007  INFO 13656 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 18:24:55.335  INFO 13656 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-15 18:24:55.379  INFO 13656 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-15 18:24:55.386  INFO 13656 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 4.875 seconds (JVM running for 5.461)
-2014-02-15 18:25:06.191  INFO 13656 [http-nio-9000-exec-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-15 18:25:06.191  INFO 13656 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-15 18:25:06.216  INFO 13656 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
-2014-02-15 18:26:30.392  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:32.280  INFO 13656 [http-nio-9000-exec-5] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:32.757  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:32.957  INFO 13656 [http-nio-9000-exec-7] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:33.153  INFO 13656 [http-nio-9000-exec-8] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:33.325  INFO 13656 [http-nio-9000-exec-9] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:33.509  INFO 13656 [http-nio-9000-exec-1] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:33.694  INFO 13656 [http-nio-9000-exec-10] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:26:46.011  INFO 13656 [http-nio-9000-exec-3] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa356ef86818539bcad78, firstName='19d89338-f0eb-4259-9cf3-7dc7cf5f69a9', lastName='1392485205994']
-2014-02-15 18:26:47.020  INFO 13656 [http-nio-9000-exec-2] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa357ef86818539bcad79, firstName='0d64a7ab-2763-47fa-b601-565286453636', lastName='1392485207018']
-2014-02-15 18:26:47.528  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa357ef86818539bcad7a, firstName='ddf6d2e6-ee77-4005-8569-6e8cb230b273', lastName='1392485207526']
-2014-02-15 18:26:47.813  INFO 13656 [http-nio-9000-exec-5] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa357ef86818539bcad7b, firstName='693f6fb0-fc54-4452-9ed9-b12fc37569f1', lastName='1392485207811']
-2014-02-15 18:26:48.040  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa358ef86818539bcad7c, firstName='008d12ca-0ff0-424d-b841-2ef9cb2087a5', lastName='1392485208038']
-2014-02-15 18:26:48.256  INFO 13656 [http-nio-9000-exec-7] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa358ef86818539bcad7d, firstName='b15615d3-90e4-4236-970f-9a96811f5ca1', lastName='1392485208254']
-2014-02-15 18:26:48.469  INFO 13656 [http-nio-9000-exec-8] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa358ef86818539bcad7e, firstName='70fd01b0-321d-49ea-80b0-e45b781217e1', lastName='1392485208468']
-2014-02-15 18:26:48.672  INFO 13656 [http-nio-9000-exec-9] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa358ef86818539bcad7f, firstName='80689641-46ed-487f-a4b6-4cc263a30381', lastName='1392485208670']
-2014-02-15 18:26:48.856  INFO 13656 [http-nio-9000-exec-1] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa358ef86818539bcad80, firstName='3939e978-e1c7-41f2-a57a-860a86ff6b23', lastName='1392485208854']
-2014-02-15 18:26:49.091  INFO 13656 [http-nio-9000-exec-10] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa359ef86818539bcad81, firstName='6fba30b9-ae87-4d73-b9ea-69a4765f486b', lastName='1392485209089']
-2014-02-15 18:26:49.301  INFO 13656 [http-nio-9000-exec-3] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa359ef86818539bcad82, firstName='8880454e-6cb3-4377-8847-f15a8adeb1a3', lastName='1392485209300']
-2014-02-15 18:26:49.517  INFO 13656 [http-nio-9000-exec-2] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa359ef86818539bcad83, firstName='93a2494c-09cc-4f39-bf4a-ff3aa5f839c0', lastName='1392485209516']
-2014-02-15 18:26:49.688  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa359ef86818539bcad84, firstName='bc511935-f82e-4fdc-8105-08ae22a146d1', lastName='1392485209687']
-2014-02-15 18:26:49.920  INFO 13656 [http-nio-9000-exec-5] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa359ef86818539bcad85, firstName='dc6fa165-ba5b-4557-abc9-4cf528e1f4cc', lastName='1392485209919']
-2014-02-15 18:26:50.120  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35aef86818539bcad86, firstName='f4136b8b-778a-4bf3-99d6-2bfc855ecb05', lastName='1392485210118']
-2014-02-15 18:26:50.308  INFO 13656 [http-nio-9000-exec-7] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35aef86818539bcad87, firstName='32271150-da33-4056-9fe7-74b01489e7a9', lastName='1392485210305']
-2014-02-15 18:26:50.504  INFO 13656 [http-nio-9000-exec-8] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35aef86818539bcad88, firstName='bba3c513-fc9b-4d41-99db-98e0ee71f421', lastName='1392485210503']
-2014-02-15 18:26:50.711  INFO 13656 [http-nio-9000-exec-9] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35aef86818539bcad89, firstName='3e31acf8-38fc-4996-b149-cb283a6461e9', lastName='1392485210709']
-2014-02-15 18:26:50.891  INFO 13656 [http-nio-9000-exec-1] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35aef86818539bcad8a, firstName='f197e889-7680-423d-bda6-758f98d33f44', lastName='1392485210889']
-2014-02-15 18:26:51.106  INFO 13656 [http-nio-9000-exec-10] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35bef86818539bcad8b, firstName='d34ba965-8f2e-4717-9c07-7d58c6a90a07', lastName='1392485211103']
-2014-02-15 18:26:51.299  INFO 13656 [http-nio-9000-exec-3] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35bef86818539bcad8c, firstName='909e2207-a935-4fde-9a2a-5ef07d15befd', lastName='1392485211298']
-2014-02-15 18:26:51.488  INFO 13656 [http-nio-9000-exec-2] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35bef86818539bcad8d, firstName='0dee5d24-4e8e-4b62-a337-db6b86620261', lastName='1392485211486']
-2014-02-15 18:26:51.705  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35bef86818539bcad8e, firstName='b6012861-3a43-4e09-9730-23cfdf6b2b7a', lastName='1392485211703']
-2014-02-15 18:26:51.880  INFO 13656 [http-nio-9000-exec-5] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35bef86818539bcad8f, firstName='1c89b807-c413-4514-a0aa-1c199dd61f98', lastName='1392485211879']
-2014-02-15 18:26:52.384  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad90, firstName='cc8d1e72-b711-4e58-b37b-a0a30b83f805', lastName='1392485212382']
-2014-02-15 18:26:52.494  INFO 13656 [http-nio-9000-exec-7] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad91, firstName='b20892f1-44a1-4a78-99e8-0e8cab79bb94', lastName='1392485212492']
-2014-02-15 18:26:52.580  INFO 13656 [http-nio-9000-exec-8] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad92, firstName='9e8279e3-512c-4d3d-bf21-743d8cd36d04', lastName='1392485212579']
-2014-02-15 18:26:52.672  INFO 13656 [http-nio-9000-exec-9] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad93, firstName='3c6068db-3cd9-4259-9be3-339a9489df32', lastName='1392485212670']
-2014-02-15 18:26:52.745  INFO 13656 [http-nio-9000-exec-1] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad94, firstName='d22e103e-2a0d-48c4-9cfa-c444ab78165b', lastName='1392485212743']
-2014-02-15 18:26:52.841  INFO 13656 [http-nio-9000-exec-10] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad95, firstName='7ed5a7df-72cf-46a5-b691-d86a0dd862c8', lastName='1392485212839']
-2014-02-15 18:26:52.912  INFO 13656 [http-nio-9000-exec-3] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad96, firstName='68007a9b-bf03-484e-bcb4-70930a1778dc', lastName='1392485212911']
-2014-02-15 18:26:52.994  INFO 13656 [http-nio-9000-exec-2] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35cef86818539bcad97, firstName='adfb19ca-7846-4029-a3b1-b6bfec928e70', lastName='1392485212992']
-2014-02-15 18:26:53.095  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35def86818539bcad98, firstName='bfa74305-cc5b-4d2d-b148-1c137b88ff10', lastName='1392485213092']
-2014-02-15 18:26:53.168  INFO 13656 [http-nio-9000-exec-5] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35def86818539bcad99, firstName='0d8a5c91-e18f-4621-a830-02167bb08470', lastName='1392485213167']
-2014-02-15 18:26:53.253  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35def86818539bcad9a, firstName='42fa832c-64f3-40a2-95c0-6fbbe0eeef36', lastName='1392485213252']
-2014-02-15 18:26:53.343  INFO 13656 [http-nio-9000-exec-7] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa35def86818539bcad9b, firstName='420e0df7-ab4a-4512-a5c1-caaa081739cf', lastName='1392485213341']
-2014-02-15 18:27:05.095  INFO 13656 [http-nio-9000-exec-9] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:28:09.319  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa3a9ef86818539bcad9c, firstName='lolo', lastName='ldlf']
-2014-02-15 18:28:58.201  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:30:23.691  INFO 13719 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 13719 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-15 18:30:23.768  INFO 13719 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@da41dc5: startup date [Sat Feb 15 18:30:23 CET 2014]; root of context hierarchy
-2014-02-15 18:30:25.710  INFO 13719 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-15 18:30:26.165  INFO 13719 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-15 18:30:26.166  INFO 13719 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-15 18:30:26.387  INFO 13719 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-15 18:30:26.387  INFO 13719 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2625 ms
-2014-02-15 18:30:27.630 ERROR 13719 [main] --- o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler ["http-nio-9000"]
+2014-02-16 23:38:55.236  INFO 1490 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 1490 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
+2014-02-16 23:38:55.338  INFO 1490 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@da41dc5: startup date [Sun Feb 16 23:38:55 CET 2014]; root of context hierarchy
+2014-02-16 23:38:57.629  INFO 1490 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 80
+2014-02-16 23:38:58.053  INFO 1490 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
+2014-02-16 23:38:58.054  INFO 1490 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
+2014-02-16 23:38:58.288  INFO 1490 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2014-02-16 23:38:58.288  INFO 1490 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2955 ms
+2014-02-16 23:38:59.313 ERROR 1490 [main] --- o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler ["http-nio-80"]
 
-java.net.BindException: Address already in use
+java.net.SocketException: Permission denied
 	at sun.nio.ch.Net.bind0(Native Method)
 	at sun.nio.ch.Net.bind(Net.java:444)
 	at sun.nio.ch.Net.bind(Net.java:436)
@@ -106,9 +37,9 @@ java.net.BindException: Address already in use
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:866)
 	at com.group3s.urubu.UrubuApplication.main(UrubuApplication.java:22)
 
-2014-02-15 18:30:27.633 ERROR 13719 [main] --- o.apache.catalina.core.StandardService   : Failed to start connector [Connector[org.apache.coyote.http11.Http11NioProtocol-9000]]
+2014-02-16 23:38:59.316 ERROR 1490 [main] --- o.apache.catalina.core.StandardService   : Failed to start connector [Connector[org.apache.coyote.http11.Http11NioProtocol-80]]
 
-org.apache.catalina.LifecycleException: Failed to start component [Connector[org.apache.coyote.http11.Http11NioProtocol-9000]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[org.apache.coyote.http11.Http11NioProtocol-80]]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:154)
 	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:459)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
@@ -132,7 +63,7 @@ Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat"; 
 	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1017)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
 	... 18 common frames omitted
-Caused by: java.net.BindException: Address already in use
+Caused by: java.net.SocketException: Permission denied
 	at sun.nio.ch.Net.bind0(Native Method)
 	at sun.nio.ch.Net.bind(Net.java:444)
 	at sun.nio.ch.Net.bind(Net.java:436)
@@ -144,564 +75,45 @@ Caused by: java.net.BindException: Address already in use
 	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1010)
 	... 19 common frames omitted
 
-2014-02-15 18:30:27.638  INFO 13719 [main] --- o.apache.catalina.core.StandardService   : Stopping service Tomcat
-2014-02-15 18:30:27.663  INFO 13719 [main] --- .b.l.ClasspathLoggingApplicationListener : Application failed to start with classpath: [file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.0.0.RC2/spring-boot-starter-web-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter/1.0.0.RC2/spring-boot-starter-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot/1.0.0.RC2/spring-boot-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.0.0.RC2/spring-boot-autoconfigure-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.0.0.RC2/spring-boot-starter-tomcat-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.jar, file:/Users/Lolo/.m2/repository/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.3.1/jackson-databind-2.3.1.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.3.0/jackson-annotations-2.3.0.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.1/jackson-core-2.3.1.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-web/4.0.1.RELEASE/spring-web-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-aop/4.0.1.RELEASE/spring-aop-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-webmvc/4.0.1.RELEASE/spring-webmvc-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/hibernate/hibernate-validator/5.0.2.Final/hibernate-validator-5.0.2.Final.jar, file:/Users/Lolo/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar, file:/Users/Lolo/.m2/repository/org/jboss/logging/jboss-logging/3.1.1.GA/jboss-logging-3.1.1.GA.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.0.0.RC2/spring-boot-starter-logging-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/slf4j/jul-to-slf4j/1.7.5/jul-to-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.5/log4j-over-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/ch/qos/logback/logback-classic/1.1.0/logback-classic-1.1.0.jar, file:/Users/Lolo/.m2/repository/ch/qos/logback/logback-core/1.1.0/logback-core-1.1.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/data/spring-data-mongodb/1.4.0.RC1/spring-data-mongodb-1.4.0.RC1.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-tx/4.0.1.RELEASE/spring-tx-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-context/4.0.1.RELEASE/spring-context-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-core/4.0.1.RELEASE/spring-core-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-expression/4.0.1.RELEASE/spring-expression-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/data/spring-data-commons/1.7.0.RC1/spring-data-commons-1.7.0.RC1.jar, file:/Users/Lolo/.m2/repository/org/mongodb/mongo-java-driver/2.11.3/mongo-java-driver-2.11.3.jar, file:/Users/Lolo/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/webjars/angularjs/1.2.12/angularjs-1.2.12.jar]
-2014-02-15 18:36:53.632  INFO 13656 [http-nio-9000-exec-3] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:55.091  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:55.769  INFO 13656 [http-nio-9000-exec-10] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:56.013  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:56.195  INFO 13656 [http-nio-9000-exec-9] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:56.381  INFO 13656 [http-nio-9000-exec-2] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:56.576  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:36:56.759  INFO 13656 [http-nio-9000-exec-1] --- c.group3s.urubu.web.CustomerController   : Listing all ...
-2014-02-15 18:37:17.608  INFO 13656 [http-nio-9000-exec-4] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa5cdef86818539bcad9d, firstName='lolo', lastName='ldlf']
-2014-02-15 18:37:19.514  INFO 13656 [http-nio-9000-exec-5] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa5cfef86818539bcad9e, firstName='lolo', lastName='ldlf']
-2014-02-15 18:37:20.026  INFO 13656 [http-nio-9000-exec-6] --- c.group3s.urubu.web.CustomerController   : saved : Customer[id=52ffa5d0ef86818539bcad9f, firstName='lolo', lastName='ldlf']
-2014-02-15 18:37:22.856  INFO 13656 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sat Feb 15 18:24:51 CET 2014]; root of context hierarchy
-2014-02-15 18:37:22.860  INFO 13656 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2014-02-15 18:37:34.528  INFO 13749 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 13749 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-15 18:37:34.587  INFO 13749 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@da41dc5: startup date [Sat Feb 15 18:37:34 CET 2014]; root of context hierarchy
-2014-02-15 18:37:36.707  INFO 13749 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-15 18:37:37.235  INFO 13749 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-15 18:37:37.236  INFO 13749 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-15 18:37:37.481  INFO 13749 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-15 18:37:37.481  INFO 13749 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2899 ms
-2014-02-15 18:37:39.243  INFO 13749 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 18:37:39.377  INFO 13749 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-15 18:37:39.378  INFO 13749 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-15 18:37:39.379  INFO 13749 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-15 18:37:39.381  INFO 13749 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-15 18:37:39.393  INFO 13749 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-15 18:37:39.397  INFO 13749 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-15 18:37:39.420  INFO 13749 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 18:37:39.420  INFO 13749 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 18:37:39.729  INFO 13749 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-15 18:37:39.765  INFO 13749 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-15 18:37:39.773  INFO 13749 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 6.077 seconds (JVM running for 6.768)
-2014-02-15 18:37:43.739  INFO 13749 [http-nio-9000-exec-2] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-15 18:37:43.740  INFO 13749 [http-nio-9000-exec-2] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-15 18:37:43.768  INFO 13749 [http-nio-9000-exec-2] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
-2014-02-15 18:37:43.788  WARN 13749 [http-nio-9000-exec-2] --- o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
-2014-02-15 18:37:43.788  WARN 13749 [http-nio-9000-exec-1] --- o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
-2014-02-15 18:39:05.386  WARN 13749 [http-nio-9000-exec-7] --- o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
-2014-02-15 18:39:05.573  WARN 13749 [http-nio-9000-exec-8] --- o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
-2014-02-15 18:39:07.590  WARN 13749 [http-nio-9000-exec-9] --- o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
-2014-02-15 18:56:00.518  INFO 13749 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@da41dc5: startup date [Sat Feb 15 18:37:34 CET 2014]; root of context hierarchy
-2014-02-15 18:56:00.532  INFO 13749 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2014-02-15 18:59:55.993  INFO 13862 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 13862 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-15 18:59:56.066  INFO 13862 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@63f415f: startup date [Sat Feb 15 18:59:56 CET 2014]; root of context hierarchy
-2014-02-15 18:59:57.947  INFO 13862 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-15 18:59:58.339  INFO 13862 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-15 18:59:58.340  INFO 13862 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-15 18:59:58.551  INFO 13862 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-15 18:59:58.552  INFO 13862 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2492 ms
-2014-02-15 19:00:00.217  WARN 13862 [main] --- o.s.d.m.c.m.BasicMongoPersistentProperty : Customizing field name for id property not allowed! Custom name will not be considered!
-2014-02-15 19:00:00.222  INFO 13862 [main] --- o.apache.catalina.core.StandardService   : Stopping service Tomcat
-2014-02-15 19:00:00.234  INFO 13862 [main] --- .b.l.ClasspathLoggingApplicationListener : Application failed to start with classpath: [file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.0.0.RC2/spring-boot-starter-web-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter/1.0.0.RC2/spring-boot-starter-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot/1.0.0.RC2/spring-boot-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.0.0.RC2/spring-boot-autoconfigure-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.0.0.RC2/spring-boot-starter-tomcat-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.jar, file:/Users/Lolo/.m2/repository/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.3.1/jackson-databind-2.3.1.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.3.0/jackson-annotations-2.3.0.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.1/jackson-core-2.3.1.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-web/4.0.1.RELEASE/spring-web-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-aop/4.0.1.RELEASE/spring-aop-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-webmvc/4.0.1.RELEASE/spring-webmvc-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/hibernate/hibernate-validator/5.0.2.Final/hibernate-validator-5.0.2.Final.jar, file:/Users/Lolo/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar, file:/Users/Lolo/.m2/repository/org/jboss/logging/jboss-logging/3.1.1.GA/jboss-logging-3.1.1.GA.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.0.0.RC2/spring-boot-starter-logging-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/slf4j/jul-to-slf4j/1.7.5/jul-to-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.5/log4j-over-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/ch/qos/logback/logback-classic/1.1.0/logback-classic-1.1.0.jar, file:/Users/Lolo/.m2/repository/ch/qos/logback/logback-core/1.1.0/logback-core-1.1.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/data/spring-data-mongodb/1.4.0.RC1/spring-data-mongodb-1.4.0.RC1.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-tx/4.0.1.RELEASE/spring-tx-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-context/4.0.1.RELEASE/spring-context-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-core/4.0.1.RELEASE/spring-core-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-expression/4.0.1.RELEASE/spring-expression-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/data/spring-data-commons/1.7.0.RC1/spring-data-commons-1.7.0.RC1.jar, file:/Users/Lolo/.m2/repository/org/mongodb/mongo-java-driver/2.11.3/mongo-java-driver-2.11.3.jar, file:/Users/Lolo/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/webjars/angularjs/1.2.12/angularjs-1.2.12.jar]
-2014-02-15 19:00:00.235  INFO 13862 [main] --- utoConfigurationReportLoggingInitializer : 
-
-Error starting ApplicationContext. To display the auto-configuration report enabled debug logging (start with --debug)
-
-
-2014-02-15 19:02:19.447  INFO 13875 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 13875 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-15 19:02:19.507  INFO 13875 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sat Feb 15 19:02:19 CET 2014]; root of context hierarchy
-2014-02-15 19:02:21.297  INFO 13875 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-15 19:02:21.672  INFO 13875 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-15 19:02:21.673  INFO 13875 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-15 19:02:21.867  INFO 13875 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-15 19:02:21.867  INFO 13875 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2364 ms
-2014-02-15 19:02:23.547  INFO 13875 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 19:02:23.723  INFO 13875 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-15 19:02:23.724  INFO 13875 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-15 19:02:23.725  INFO 13875 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-15 19:02:23.727  INFO 13875 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-15 19:02:23.729  INFO 13875 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Mesure com.group3s.urubu.web.MesureController.create(java.lang.String)
-2014-02-15 19:02:23.731  INFO 13875 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Mesure> com.group3s.urubu.web.MesureController.all()
-2014-02-15 19:02:23.744  INFO 13875 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-15 19:02:23.750  INFO 13875 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-15 19:02:23.773  INFO 13875 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 19:02:23.774  INFO 13875 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 19:02:24.139  INFO 13875 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-15 19:02:24.189  INFO 13875 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-15 19:02:24.201  INFO 13875 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 5.51 seconds (JVM running for 6.087)
-2014-02-15 19:02:34.445  INFO 13875 [http-nio-9000-exec-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-15 19:02:34.445  INFO 13875 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-15 19:02:34.476  INFO 13875 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
-2014-02-15 19:02:40.362  INFO 13875 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : Listing all ...
-2014-02-15 19:02:45.324  WARN 13875 [http-nio-9000-exec-7] --- o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
-2014-02-15 19:02:57.847  INFO 13875 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sat Feb 15 19:02:19 CET 2014]; root of context hierarchy
-2014-02-15 19:02:57.851  INFO 13875 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2014-02-15 19:03:06.515  INFO 13880 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 13880 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-15 19:03:06.575  INFO 13880 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sat Feb 15 19:03:06 CET 2014]; root of context hierarchy
-2014-02-15 19:03:08.431  INFO 13880 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-15 19:03:08.790  INFO 13880 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-15 19:03:08.791  INFO 13880 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-15 19:03:08.973  INFO 13880 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-15 19:03:08.973  INFO 13880 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2402 ms
-2014-02-15 19:03:10.488  INFO 13880 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 19:03:10.694  INFO 13880 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-15 19:03:10.695  INFO 13880 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-15 19:03:10.697  INFO 13880 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-15 19:03:10.701  INFO 13880 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-15 19:03:10.704  INFO 13880 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Mesure com.group3s.urubu.web.MesureController.create(java.lang.String)
-2014-02-15 19:03:10.704  INFO 13880 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Mesure> com.group3s.urubu.web.MesureController.all()
-2014-02-15 19:03:10.715  INFO 13880 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-15 19:03:10.721  INFO 13880 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-15 19:03:10.741  INFO 13880 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 19:03:10.742  INFO 13880 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-15 19:03:11.096  INFO 13880 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-15 19:03:11.147  INFO 13880 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-15 19:03:11.152  INFO 13880 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 5.099 seconds (JVM running for 5.664)
-2014-02-15 19:03:17.051  INFO 13880 [http-nio-9000-exec-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-15 19:03:17.052  INFO 13880 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-15 19:03:17.071  INFO 13880 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
-2014-02-15 19:03:17.219  INFO 13880 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@697c394e[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:01.618  INFO 13880 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@713136e5[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:02.330  INFO 13880 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5f731ffa[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:02.532  INFO 13880 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@47ee2ad9[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:02.757  INFO 13880 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@456e5841[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:03.044  INFO 13880 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@708ddeac[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:03.267  INFO 13880 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@1d1b1d50[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:03.475  INFO 13880 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@158ac84e[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:03.682  INFO 13880 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@40119208[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:03.893  INFO 13880 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@418a6c14[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:04.113  INFO 13880 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@2c4ea6b[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:04.309  INFO 13880 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@4dfa1838[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:04.513  INFO 13880 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5e4c2c86[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:04.713  INFO 13880 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5aff41c7[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:04.942  INFO 13880 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@2c379e7d[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:05.156  INFO 13880 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@35972277[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:05.392  INFO 13880 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@360a0c7d[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:05.628  INFO 13880 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@4db9fe42[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:05.880  INFO 13880 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@6de3c6eb[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:06.099  INFO 13880 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@518a6aa[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:06.347  INFO 13880 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@1565e583[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:06.580  INFO 13880 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@54bf066e[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:06.801  INFO 13880 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@493f4b39[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:07.029  INFO 13880 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5a63b0c0[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:07.263  INFO 13880 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@46e93b9c[adco=null,hchc=null,hchp=null,hhphc=null,ptec=null,iinst=null,papp=null,imax=null,optarif=null,isousc=null,motdetat=null,]
-2014-02-15 19:31:12.468  INFO 13880 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : Listing all ...
-2014-02-16 10:51:13.223  INFO 13880 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : Listing all ...
-2014-02-16 10:51:17.948  INFO 13880 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : Listing all ...
-2014-02-16 11:06:08.175  INFO 13880 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sat Feb 15 19:03:06 CET 2014]; root of context hierarchy
-2014-02-16 11:06:08.190  INFO 13880 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2014-02-16 11:07:52.594  INFO 14263 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 14263 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-16 11:07:52.668  INFO 14263 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sun Feb 16 11:07:52 CET 2014]; root of context hierarchy
-2014-02-16 11:07:54.578  INFO 14263 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-16 11:07:54.984  INFO 14263 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-16 11:07:54.984  INFO 14263 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-16 11:07:55.168  INFO 14263 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-16 11:07:55.168  INFO 14263 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2504 ms
-2014-02-16 11:07:56.802  INFO 14263 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:07:56.949  INFO 14263 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-16 11:07:56.950  INFO 14263 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-16 11:07:56.951  INFO 14263 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-16 11:07:56.952  INFO 14263 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-16 11:07:56.954  INFO 14263 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Mesure com.group3s.urubu.web.MesureController.create(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-2014-02-16 11:07:56.954  INFO 14263 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Mesure> com.group3s.urubu.web.MesureController.all()
-2014-02-16 11:07:56.968  INFO 14263 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-16 11:07:56.973  INFO 14263 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-16 11:07:56.990  INFO 14263 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:07:56.990  INFO 14263 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:07:57.304  INFO 14263 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-16 11:07:57.350  INFO 14263 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-16 11:07:57.356  INFO 14263 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 5.625 seconds (JVM running for 6.28)
-2014-02-16 11:22:46.443  INFO 14263 [http-nio-9000-exec-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-16 11:22:46.444  INFO 14263 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-16 11:22:46.465  INFO 14263 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
-2014-02-16 11:24:19.633  INFO 14263 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3ab800d7: startup date [Sun Feb 16 11:07:52 CET 2014]; root of context hierarchy
-2014-02-16 11:24:19.639  INFO 14263 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2014-02-16 11:24:29.891  INFO 14779 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 14779 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-16 11:24:29.955  INFO 14779 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@da41dc5: startup date [Sun Feb 16 11:24:29 CET 2014]; root of context hierarchy
-2014-02-16 11:24:31.822  INFO 14779 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-16 11:24:32.219  INFO 14779 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-16 11:24:32.219  INFO 14779 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-16 11:24:32.412  INFO 14779 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-16 11:24:32.413  INFO 14779 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2462 ms
-2014-02-16 11:24:34.056  INFO 14779 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:24:34.196  INFO 14779 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-16 11:24:34.198  INFO 14779 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-16 11:24:34.199  INFO 14779 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-16 11:24:34.200  INFO 14779 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-16 11:24:34.202  INFO 14779 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Mesure com.group3s.urubu.web.MesureController.create(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-2014-02-16 11:24:34.203  INFO 14779 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Mesure> com.group3s.urubu.web.MesureController.all()
-2014-02-16 11:24:34.219  INFO 14779 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-16 11:24:34.227  INFO 14779 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-16 11:24:34.248  INFO 14779 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:24:34.249  INFO 14779 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:24:34.647  INFO 14779 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-16 11:24:34.684  INFO 14779 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-16 11:24:34.689  INFO 14779 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 5.615 seconds (JVM running for 6.292)
-2014-02-16 11:25:06.275  INFO 14779 [http-nio-9000-exec-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-16 11:25:06.275  INFO 14779 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-16 11:25:06.300  INFO 14779 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
-2014-02-16 11:25:06.370 ERROR 14779 [http-nio-9000-exec-1] --- o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: For input string: "hchc"] with root cause
-
-java.lang.NumberFormatException: For input string: "hchc"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.<init>(Integer.java:677)
-	at com.group3s.urubu.web.MesureController.create(MesureController.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:690)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:680)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1721)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1679)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:724)
-
-2014-02-16 11:25:20.816 ERROR 14779 [http-nio-9000-exec-2] --- o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: For input string: "hchp"] with root cause
-
-java.lang.NumberFormatException: For input string: "hchp"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.<init>(Integer.java:677)
-	at com.group3s.urubu.web.MesureController.create(MesureController.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:690)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:680)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1721)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1679)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:724)
-
-2014-02-16 11:25:27.481 ERROR 14779 [http-nio-9000-exec-3] --- o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: For input string: "iinst"] with root cause
-
-java.lang.NumberFormatException: For input string: "iinst"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.<init>(Integer.java:677)
-	at com.group3s.urubu.web.MesureController.create(MesureController.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:690)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:680)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1721)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1679)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:724)
-
-2014-02-16 11:25:33.832 ERROR 14779 [http-nio-9000-exec-4] --- o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: For input string: "papp"] with root cause
-
-java.lang.NumberFormatException: For input string: "papp"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.<init>(Integer.java:677)
-	at com.group3s.urubu.web.MesureController.create(MesureController.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:690)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:680)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1721)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1679)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:724)
-
-2014-02-16 11:25:38.203 ERROR 14779 [http-nio-9000-exec-5] --- o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: For input string: "imax"] with root cause
-
-java.lang.NumberFormatException: For input string: "imax"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.<init>(Integer.java:677)
-	at com.group3s.urubu.web.MesureController.create(MesureController.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:690)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:680)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1721)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1679)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:724)
-
-2014-02-16 11:25:44.171 ERROR 14779 [http-nio-9000-exec-6] --- o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NumberFormatException: For input string: "isousc"] with root cause
-
-java.lang.NumberFormatException: For input string: "isousc"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.<init>(Integer.java:677)
-	at com.group3s.urubu.web.MesureController.create(MesureController.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:690)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:680)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1721)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1679)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-	at java.lang.Thread.run(Thread.java:724)
-
-2014-02-16 11:25:48.680  INFO 14779 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@607172bc[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:28.346  INFO 14779 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@da41dc5: startup date [Sun Feb 16 11:24:29 CET 2014]; root of context hierarchy
-2014-02-16 11:26:28.350  INFO 14779 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2014-02-16 11:26:37.154  INFO 14780 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 14780 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
-2014-02-16 11:26:37.216  INFO 14780 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@63f415f: startup date [Sun Feb 16 11:26:37 CET 2014]; root of context hierarchy
-2014-02-16 11:26:38.945  INFO 14780 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
-2014-02-16 11:26:39.303  INFO 14780 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
-2014-02-16 11:26:39.303  INFO 14780 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
-2014-02-16 11:26:39.482  INFO 14780 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2014-02-16 11:26:39.482  INFO 14780 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2271 ms
-2014-02-16 11:26:40.962  INFO 14780 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:26:41.123  INFO 14780 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
-2014-02-16 11:26:41.124  INFO 14780 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
-2014-02-16 11:26:41.125  INFO 14780 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
-2014-02-16 11:26:41.126  INFO 14780 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
-2014-02-16 11:26:41.128  INFO 14780 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Mesure com.group3s.urubu.web.MesureController.create(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-2014-02-16 11:26:41.128  INFO 14780 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Mesure> com.group3s.urubu.web.MesureController.all()
-2014-02-16 11:26:41.142  INFO 14780 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
-2014-02-16 11:26:41.148  INFO 14780 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
-2014-02-16 11:26:41.171  INFO 14780 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:26:41.172  INFO 14780 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2014-02-16 11:26:41.510  INFO 14780 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2014-02-16 11:26:41.549  INFO 14780 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
-2014-02-16 11:26:41.553  INFO 14780 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 5.234 seconds (JVM running for 5.91)
-2014-02-16 11:26:44.101  INFO 14780 [http-nio-9000-exec-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2014-02-16 11:26:44.102  INFO 14780 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2014-02-16 11:26:44.122  INFO 14780 [http-nio-9000-exec-1] --- o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
-2014-02-16 11:26:44.260  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@481b1ef3[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:45.911  INFO 14780 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@74c0c457[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:46.548  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@46e93b9c[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:46.895  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@3ab03bd5[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:47.114  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@6f4d108d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:47.335  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@76405e76[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:47.555  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@3bcc7247[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:47.767  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5ef59fc2[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:47.962  INFO 14780 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@1ca82d8e[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:48.171  INFO 14780 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@456a1dc6[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:48.329  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@39c8d5c4[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:48.823  INFO 14780 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@304a547f[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:48.948  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5ff1769d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.025  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@65a26ea0[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.139  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@b0cfe81[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.195  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@72c619d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.270  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@3a36cb91[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.388  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@636eba72[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.443  INFO 14780 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@7a92c55d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.524  INFO 14780 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@39db9b89[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.640  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@c05d0c[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.709  INFO 14780 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@551cbf36[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.772  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@524d9de1[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.882  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@65b848fd[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:49.942  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@25c00e37[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.036  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@63e5503d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.111  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@6f3036d6[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.192  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@466054a1[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.273  INFO 14780 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5e543a1f[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.388  INFO 14780 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@6bb3f99a[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.452  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@74c824b3[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.545  INFO 14780 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@7fe19faa[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.621  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@35b9937d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.698  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@2a820f19[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.789  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@30594770[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.884  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@356122dc[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:50.960  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@7c37b4e4[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.039  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@2d452472[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.123  INFO 14780 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@65998c51[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.223  INFO 14780 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@43cb4df3[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.291  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@586aaf4a[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.377  INFO 14780 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@441a509f[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.459  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@1ba319a7[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.543  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@70e9311d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.632  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5d97a0d4[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.746  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@dbfee4d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.839  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@33b60848[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.899  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@73d9c97d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:51.965  INFO 14780 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5f3b68f6[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.054  INFO 14780 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@46e05be2[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.137  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@33b076c8[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.238  INFO 14780 [http-nio-9000-exec-2] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@6465efb[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.299  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@7605b3f4[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.381  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@706994b4[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.465  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@23a1ef14[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.566  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5c571c52[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.635  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5b047ada[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.717  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@31dace5[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.816  INFO 14780 [http-nio-9000-exec-9] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@1141effc[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.887  INFO 14780 [http-nio-9000-exec-10] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@7ff2923d[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 11:26:52.967  INFO 14780 [http-nio-9000-exec-1] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@e5f246b[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 20:28:18.274  INFO 14780 [http-nio-9000-exec-3] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@69c921c2[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 20:28:18.917  INFO 14780 [http-nio-9000-exec-4] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@e14ecd5[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 20:28:19.163  INFO 14780 [http-nio-9000-exec-5] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@4b436597[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 20:28:19.353  INFO 14780 [http-nio-9000-exec-6] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@35c2c31b[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 20:28:19.554  INFO 14780 [http-nio-9000-exec-7] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@5973d30[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
-2014-02-16 20:28:19.728  INFO 14780 [http-nio-9000-exec-8] --- com.group3s.urubu.web.MesureController   : saved : com.group3s.urubu.domain.Mesure@c321d2e[adco=adco,hchc=1,hchp=1,hhphc=hhphc,ptec=ptec,iinst=1,papp=1,imax=1,optarif=optarif,isousc=1,motdetat=motdetat,]
+2014-02-16 23:38:59.318  INFO 1490 [main] --- o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2014-02-16 23:38:59.349  INFO 1490 [main] --- .b.l.ClasspathLoggingApplicationListener : Application failed to start with classpath: [file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.0.0.RC2/spring-boot-starter-web-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter/1.0.0.RC2/spring-boot-starter-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot/1.0.0.RC2/spring-boot-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.0.0.RC2/spring-boot-autoconfigure-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.0.0.RC2/spring-boot-starter-tomcat-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.jar, file:/Users/Lolo/.m2/repository/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.3.1/jackson-databind-2.3.1.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.3.0/jackson-annotations-2.3.0.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.1/jackson-core-2.3.1.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-web/4.0.1.RELEASE/spring-web-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-aop/4.0.1.RELEASE/spring-aop-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-webmvc/4.0.1.RELEASE/spring-webmvc-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/hibernate/hibernate-validator/5.0.2.Final/hibernate-validator-5.0.2.Final.jar, file:/Users/Lolo/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar, file:/Users/Lolo/.m2/repository/org/jboss/logging/jboss-logging/3.1.1.GA/jboss-logging-3.1.1.GA.jar, file:/Users/Lolo/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.0.0.RC2/spring-boot-starter-logging-1.0.0.RC2.jar, file:/Users/Lolo/.m2/repository/org/slf4j/jul-to-slf4j/1.7.5/jul-to-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.5/log4j-over-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/ch/qos/logback/logback-classic/1.1.0/logback-classic-1.1.0.jar, file:/Users/Lolo/.m2/repository/ch/qos/logback/logback-core/1.1.0/logback-core-1.1.0.jar, file:/Users/Lolo/.m2/repository/org/springframework/data/spring-data-mongodb/1.4.0.RC1/spring-data-mongodb-1.4.0.RC1.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-tx/4.0.1.RELEASE/spring-tx-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-context/4.0.1.RELEASE/spring-context-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-core/4.0.1.RELEASE/spring-core-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/spring-expression/4.0.1.RELEASE/spring-expression-4.0.1.RELEASE.jar, file:/Users/Lolo/.m2/repository/org/springframework/data/spring-data-commons/1.7.0.RC1/spring-data-commons-1.7.0.RC1.jar, file:/Users/Lolo/.m2/repository/org/mongodb/mongo-java-driver/2.11.3/mongo-java-driver-2.11.3.jar, file:/Users/Lolo/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar, file:/Users/Lolo/.m2/repository/org/webjars/angularjs/1.2.12/angularjs-1.2.12.jar]
+2014-02-16 23:39:47.768  INFO 1491 [main] --- com.group3s.urubu.UrubuApplication       : Starting UrubuApplication on macbook.local with PID 1491 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
+2014-02-16 23:39:47.840  INFO 1491 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@119e7782: startup date [Sun Feb 16 23:39:47 CET 2014]; root of context hierarchy
+2014-02-16 23:39:49.797  INFO 1491 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
+2014-02-16 23:39:50.217  INFO 1491 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
+2014-02-16 23:39:50.218  INFO 1491 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
+2014-02-16 23:39:50.439  INFO 1491 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2014-02-16 23:39:50.440  INFO 1491 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2605 ms
+2014-02-16 23:39:52.319  INFO 1491 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-02-16 23:39:52.481  INFO 1491 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/create],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.create(java.lang.String,java.lang.String)
+2014-02-16 23:39:52.482  INFO 1491 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Customer> com.group3s.urubu.web.CustomerController.all()
+2014-02-16 23:39:52.483  INFO 1491 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/random],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Customer com.group3s.urubu.web.CustomerController.random()
+2014-02-16 23:39:52.484  INFO 1491 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello-world],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Greeting com.group3s.urubu.web.HelloWorldController.sayHello(java.lang.String)
+2014-02-16 23:39:52.486  INFO 1491 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.group3s.urubu.domain.Mesure com.group3s.urubu.web.MesureController.create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2014-02-16 23:39:52.487  INFO 1491 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.group3s.urubu.domain.Mesure> com.group3s.urubu.web.MesureController.all()
+2014-02-16 23:39:52.499  INFO 1491 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
+2014-02-16 23:39:52.504  INFO 1491 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2014-02-16 23:39:52.524  INFO 1491 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-02-16 23:39:52.524  INFO 1491 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-02-16 23:39:52.863  INFO 1491 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2014-02-16 23:39:52.910  INFO 1491 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
+2014-02-16 23:39:52.916  INFO 1491 [main] --- com.group3s.urubu.UrubuApplication       : Started UrubuApplication in 5.716 seconds (JVM running for 6.374)
+2014-02-17 13:47:05.176  INFO 1491 [Thread-1] --- ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@119e7782: startup date [Sun Feb 16 23:39:47 CET 2014]; root of context hierarchy
+2014-02-17 13:47:05.195  INFO 1491 [Thread-1] --- o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2014-02-17 18:19:46.792  INFO 4909 [main] --- com.ekito.teleinfo.TeleinfoApplication   : Starting TeleinfoApplication on macbook.eu.ekito.corp with PID 4909 (/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes started by Lolo)
+2014-02-17 18:19:46.863  INFO 4909 [main] --- ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@63f415f: startup date [Mon Feb 17 18:19:46 CET 2014]; root of context hierarchy
+2014-02-17 18:19:48.887  INFO 4909 [main] --- .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 9000
+2014-02-17 18:19:49.326  INFO 4909 [main] --- o.apache.catalina.core.StandardService   : Starting service Tomcat
+2014-02-17 18:19:49.327  INFO 4909 [main] --- org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.47
+2014-02-17 18:19:49.535  INFO 4909 [localhost-startStop-1] --- o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2014-02-17 18:19:49.536  INFO 4909 [localhost-startStop-1] --- o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2679 ms
+2014-02-17 18:19:51.274  INFO 4909 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-02-17 18:19:51.390  INFO 4909 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/create],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.ekito.teleinfo.domain.Mesure com.ekito.teleinfo.web.MesureController.create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2014-02-17 18:19:51.390  INFO 4909 [main] --- s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mesure/all],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<com.ekito.teleinfo.domain.Mesure> com.ekito.teleinfo.web.MesureController.all()
+2014-02-17 18:19:51.401  INFO 4909 [main] --- o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: file:/Users/Lolo/Documents/workspace-sts-3.4.0.RELEASE/demo/target/classes/static/index.html
+2014-02-17 18:19:51.405  INFO 4909 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2014-02-17 18:19:51.422  INFO 4909 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-02-17 18:19:51.422  INFO 4909 [main] --- o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-02-17 18:19:51.681  INFO 4909 [main] --- o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2014-02-17 18:19:51.712  INFO 4909 [main] --- s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port: 9000
+2014-02-17 18:19:51.717  INFO 4909 [main] --- com.ekito.teleinfo.TeleinfoApplication   : Started TeleinfoApplication in 5.51 seconds (JVM running for 6.236)
