@@ -1,9 +1,11 @@
 package com.ekito.teleinfo.web;
 
  
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
  
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ekito.teleinfo.domain.Mesure;
- 
 import com.ekito.teleinfo.repository.MesureRepository;
 
 @Controller
@@ -23,6 +24,7 @@ import com.ekito.teleinfo.repository.MesureRepository;
 public class MesureController {
 	
 	final static Logger logger = LoggerFactory.getLogger(MesureController.class);
+	
 
 	@Autowired
 	MesureRepository mesureRepo;
@@ -44,8 +46,9 @@ public class MesureController {
 		while (iterator.hasNext()) {
 			
 			Mesure mesure = iterator.next();
-			 
-			allString += "["+mesure.getDate().getTime()+","+ mesure.getPapp()+"],";
+			Date date =  mesure.getDate();
+			if (date!=null)
+			allString += "["+date.getTime()+","+ mesure.getPapp()+"],";
 			
 		}
 		
