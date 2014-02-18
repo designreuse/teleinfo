@@ -1,9 +1,0 @@
-com/group3s/urubu/domain/Greeting.class
-com/group3s/urubu/web/MesureController.class
-com/group3s/urubu/repository/CustomerRepository.class
-com/group3s/urubu/web/HelloWorldController.class
-com/group3s/urubu/domain/Mesure.class
-com/group3s/urubu/domain/Customer.class
-com/group3s/urubu/UrubuApplication.class
-com/group3s/urubu/repository/MesureRepository.class
-com/group3s/urubu/web/CustomerController.class
