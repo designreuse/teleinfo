@@ -1,7 +1,9 @@
 package com.ekito.teleinfo.web;
 
+ 
+import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
+ 
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ekito.teleinfo.domain.Mesure;
+ 
 import com.ekito.teleinfo.repository.MesureRepository;
 
 @Controller
@@ -22,19 +25,38 @@ public class MesureController {
 	final static Logger logger = LoggerFactory.getLogger(MesureController.class);
 
 	@Autowired
-	MesureRepository repo;
+	MesureRepository mesureRepo;
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> all() {
 		logger.info("Listing all ...");
-		List<Mesure> all = repo.findAll();
+		List<Mesure> all = mesureRepo.findAll();
 		return all;
+	}
+	
+	@RequestMapping(value = "/graphall", method = RequestMethod.GET)
+	public @ResponseBody String all_mesures() {
+		logger.info("Listing all ...");
+		List<Mesure> all = mesureRepo.findAll();
+		//List<String> allString = new ArrayList<String>();
+		String allString ="";
+		Iterator<Mesure> iterator = all.iterator();
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			 
+			allString += "["+mesure.getDate().getTime()+","+ mesure.getPapp()+"],";
+			
+		}
+		
+		
+		return "?(["+allString+"]);";
 	}
 	
 	 
 
 	private void createMesure(Mesure c) {
-		repo.save(c);
+		mesureRepo.save(c);
 		logger.info("saved : "+c);
 	}
 	
