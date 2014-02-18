@@ -35,8 +35,8 @@ public class MesureController {
 		List<Mesure> all = mesureRepo.findAll();
 		return all;
 	}
-	
-	@RequestMapping(value = "/graphall", method = RequestMethod.GET)
+	 
+	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public @ResponseBody String all_mesures() {
 		logger.info("Listing all ...");
 		List<Mesure> all = mesureRepo.findAll();
