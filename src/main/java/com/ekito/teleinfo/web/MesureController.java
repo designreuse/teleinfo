@@ -36,7 +36,7 @@ public class MesureController {
 		return all;
 	}
 	 
-	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody String all_mesures() {
 		logger.info("Listing all ...");
 		List<Mesure> all = mesureRepo.findAll();
@@ -53,7 +53,7 @@ public class MesureController {
 		}
 		
 		
-		return "?(["+allString+"]);";
+		return "?(["+allString.replaceFirst("^*(,)$", "")+"]);";
 	}
 	
 	 
