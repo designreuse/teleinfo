@@ -7,9 +7,11 @@ import java.util.List;
  
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,7 +41,7 @@ public class MesureController {
 	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody String all_mesures(@RequestParam(value = "callback", required = true) String callback) {
 		logger.info("Listing all ...");
-		List<Mesure> all = mesureRepo.findAll();
+		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
 		//List<String> allString = new ArrayList<String>();
 		String allString ="";
 		Iterator<Mesure> iterator = all.iterator();
