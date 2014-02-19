@@ -30,7 +30,7 @@ public class MongoDBTest {
 
 	@Before
 	public void berforeTest(){
-		repo.deleteAll();
+		//repo.deleteAll();
 	}
 	
 	@Test
