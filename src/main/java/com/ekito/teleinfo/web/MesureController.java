@@ -72,9 +72,11 @@ public class MesureController {
 			
 			Mesure mesure = iterator.next();
 			Date date =  mesure.getDate();
-			if (previousMesure != null )
+			if (previousMesure != null && mesure != null )
 			{
-				if (mesure.getHchc() > previousMesure.getHchc()) tarifHC = true; else tarifHC=false;
+				if (mesure.getHchc() > 
+				previousMesure.getHchc()) 
+					tarifHC = true; else tarifHC=false;
 			}
 			if (tarifHC) {
 				pappHC = mesure.getPapp(); 
