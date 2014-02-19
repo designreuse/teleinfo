@@ -92,7 +92,50 @@ public class MesureController {
 			if (date!=null)
 			{
 				
-			allString += "["+date.getTime()+","+ pappHC+","+pappHP+"],";
+			allString += "["+date.getTime()+","+ pappHC+"],";
+			}
+			previousMesure = mesure;
+		}
+		
+		
+		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
+	}
+	
+	@RequestMapping(value = "/graphall_hphp", method = RequestMethod.GET, produces = "text/javascript;")
+	public @ResponseBody String all_mesures_hphp(@RequestParam(value = "callback", required = true) String callback) {
+		logger.info("Listing all ...");
+		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
+		//List<String> allString = new ArrayList<String>();
+		String allString ="";
+		Iterator<Mesure> iterator = all.iterator();
+		Mesure previousMesure = null;
+		boolean tarifHC= false;
+		Integer pappHC=0,pappHP=0;
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			Date date =  mesure.getDate();
+			if (previousMesure != null && mesure != null )
+				if (mesure.getHchc()!= null && previousMesure.getHchc()!= null)
+			{
+				 
+				if (mesure.getHchc() > 
+				previousMesure.getHchc()) 
+					tarifHC = true; else tarifHC=false;
+			}
+			if (tarifHC) {
+				pappHC = mesure.getPapp(); 
+				pappHP = 0;
+			}
+			else
+			{
+				pappHC = 0;
+				pappHP = mesure.getPapp();
+			}
+			if (date!=null)
+			{
+				
+			allString += "["+date.getTime()+","+ pappHP+"],";
 			}
 			previousMesure = mesure;
 		}
