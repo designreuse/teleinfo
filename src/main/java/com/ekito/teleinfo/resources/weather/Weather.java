@@ -5,9 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Generated("com.googlecode.jsonschema2pojo")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Weather {
 
     private Coord coord;

@@ -3,9 +3,13 @@ package com.ekito.teleinfo.resources.weather;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Generated("com.googlecode.jsonschema2pojo")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Sys {
 
     private Double message;
