@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+import static org.springframework.data.mongodb.core.query.Query.query;
+
 import com.ekito.teleinfo.domain.Mesure;
 import com.ekito.teleinfo.repository.MesureRepository;
 
@@ -30,11 +33,24 @@ public class MesureController {
 
 	@Autowired
 	MesureRepository mesureRepo;
+	
+ 
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> all() {
 		logger.info("Listing all ...");
 		List<Mesure> all = mesureRepo.findAll();
+	
+		return all;
+	}
+	
+
+	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
+	public @ResponseBody List<Mesure> intraday() {
+		logger.info("Listing all ...");
+	    Date today = new Date(); 
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(today.getYear(),today.getMonth(),today.getDay()));
+		
 		return all;
 	}
 	 
