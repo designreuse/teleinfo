@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
  
+import java.util.Calendar;
 
 
 
@@ -29,7 +30,8 @@ import com.ekito.teleinfo.repository.MesureRepository;
 public class MesureController {
 	
 	final static Logger logger = LoggerFactory.getLogger(MesureController.class);
-	
+    Calendar calendar = Calendar.getInstance();
+
 
 	@Autowired
 	MesureRepository mesureRepo;
@@ -49,11 +51,33 @@ public class MesureController {
 	public @ResponseBody List<Mesure> intraday() {
 		logger.info("Listing all ...");
 	    Date today = new Date(); 
-		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(today.getYear(),today.getMonth(),today.getDay()));
-		
+
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH)),new Sort(Sort.Direction.ASC, "date"));
 		return all;
 	}
 	 
+	@RequestMapping(value = "/graphintraday", method = RequestMethod.GET, produces = "text/javascript;")
+	public @ResponseBody String mesuresIntraday(@RequestParam(value = "callback", required = true) String callback) {
+		logger.info("Listing all ...");
+	    Date today = new Date(); 
+
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH)),new Sort(Sort.Direction.ASC, "date"));
+		//List<String> allString = new ArrayList<String>();
+		String allString ="";
+		Iterator<Mesure> iterator = all.iterator();
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			Date date =  mesure.getDate();
+			if (date!=null)
+			allString += "["+date.getTime()+","+ mesure.getPapp()+"],";
+			
+		}
+		
+		
+		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
+	}
+	
 	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody String all_mesures(@RequestParam(value = "callback", required = true) String callback) {
 		logger.info("Listing all ...");
