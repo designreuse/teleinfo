@@ -32,7 +32,8 @@ public class MesureController {
 	
 	final static Logger logger = LoggerFactory.getLogger(MesureController.class);
     Calendar calendar = Calendar.getInstance();
-
+    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
+	
 
 	@Autowired
 	MesureRepository mesureRepo;
@@ -51,14 +52,7 @@ public class MesureController {
 	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> intraday() {
 		logger.info("Listing intraday ...");
-	    
-		logger.info("today we are: "+ calendar);
-		
-		Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
-		
-	
-		
-		
+
 		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
 
 		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
@@ -70,7 +64,7 @@ public class MesureController {
 		logger.info("Listing all ...");
 	    Date today = new Date(); 
 
-		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH)),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
 		//List<String> allString = new ArrayList<String>();
 		String allString ="";
 		Iterator<Mesure> iterator = all.iterator();
