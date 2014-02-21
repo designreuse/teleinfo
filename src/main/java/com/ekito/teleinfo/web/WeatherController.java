@@ -37,7 +37,7 @@ public class WeatherController {
 	@Autowired
 	WeatherRepository weatherRepo;
 	
-	 @Scheduled(fixedDelay = 60000)
+	 @Scheduled(fixedDelay = 600000)
 	 public void weatherGetAndSa()
 	 { 
 	 RestTemplate restTemplate = new RestTemplate();
