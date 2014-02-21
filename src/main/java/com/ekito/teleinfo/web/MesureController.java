@@ -49,10 +49,13 @@ public class MesureController {
 
 	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> intraday() {
-		logger.info("Listing all ...");
-	    Date today = new Date(); 
+		logger.info("Listing intraday ...");
+	    
+		logger.info("today we are: "+ calendar);
+		Date dateStart = new Date(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH));
+		logger.info("today we are: "+ dateStart);
 
-		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH)),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(dateStart,new Sort(Sort.Direction.ASC, "date"));
 		return all;
 	}
 	 
