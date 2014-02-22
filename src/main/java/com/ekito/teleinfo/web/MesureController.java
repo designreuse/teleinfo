@@ -31,9 +31,7 @@ import com.ekito.teleinfo.repository.MesureRepository;
 public class MesureController {
 	
 	final static Logger logger = LoggerFactory.getLogger(MesureController.class);
-    Calendar calendar = Calendar.getInstance();
-    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
-	
+    
 
 	@Autowired
 	MesureRepository mesureRepo;
@@ -52,6 +50,10 @@ public class MesureController {
 	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> intraday() {
 		logger.info("Listing intraday ...");
+		
+		Calendar calendar = Calendar.getInstance();
+	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
+		
 
 		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
 
@@ -62,7 +64,10 @@ public class MesureController {
 	@RequestMapping(value = "/graphintraday", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody String mesuresIntraday(@RequestParam(value = "callback", required = true) String callback) {
 		logger.info("Listing all ...");
-	    Date today = new Date(); 
+	    
+		Calendar calendar = Calendar.getInstance();
+	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
+		
 
 		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
 		//List<String> allString = new ArrayList<String>();
