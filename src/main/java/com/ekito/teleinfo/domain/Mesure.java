@@ -149,15 +149,15 @@ public class Mesure {
     		String pHhphc, String pPtec, 
     		Integer pIinst, Integer pPapp, Integer pImax, String pOptarif, Integer pIsousc, String pMotdetat) {
         this.id = pId;
-        this.adco = pAdco.substring(0,11);
+        this.adco = pAdco.substring(0,12);
         this.hchc =pHchc ;
         this.hchp = pHcHp ;
-        this.hhphc = pHhphc.substring(0,0) ;
-        this.ptec = pPtec.substring(0,3);
+        this.hhphc = pHhphc.substring(0,1) ;
+        this.ptec = pPtec.substring(0,4);
         this.iinst = pIinst ;
         this.papp = pPapp;
         this.imax = pImax;
-        this.optarif = pOptarif.substring(0,3);
+        this.optarif = pOptarif.substring(0,4);
         this.isousc = pIsousc;
         this.motdetat = pMotdetat;
         this.date = new Date(new Date().getTime()+60*60*1000);// ajout d'une heure, TODO voir pb heure UTC 
