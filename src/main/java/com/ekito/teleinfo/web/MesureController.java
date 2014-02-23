@@ -129,22 +129,39 @@ public class MesureController {
 	}
 	
 	@RequestMapping(value = "/initFromServer", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody void initMesures() {
+	public @ResponseBody void initMesures(@RequestParam(value = "server", required = true) String server) {
 		 RestTemplate restTemplate = new RestTemplate();
 		
 		 class ListMesure extends ArrayList<Mesure>  {  
 			 
 		 }
 		 
-		 Mesure[] mesures = restTemplate.getForObject("http://54.246.90.43/mesure/all", new Mesure[0].getClass());
+		 Mesure[] mesures = restTemplate.getForObject("http://"+server+"/mesure/all", new Mesure[0].getClass());
 		
-		 logger.info("reset all mesures");
-		 mesureRepo.deleteAll();
+		 logger.info("init from server : " + server);
+		 
+		 
+		 //mesureRepo.deleteAll();
 		 for (int i=0;i< mesures.length ; i++ ){
 			 mesureRepo.save(mesures[i]);
 			 
 		 }
-		 logger.info("init from server, save "+mesures.length+" elements");
+		 logger.info("init from server, save "+mesures.length+" weathers");
+		 /*
+			 
+		 class ListWeather extends ArrayList<LocalWeather>  {  
+		 }
+		 
+		 LocalWeather[] localweathers = restTemplate.getForObject("http://54.246.90.43/weather/all", new LocalWeather[0].getClass());
+		
+		 logger.info("reset all weathers");
+		 weatherRepo.deleteAll();
+		 for (int i=0;i< localweathers.length ; i++ ){
+			 weatherRepo.save(localweathers[i]);
+			 
+		 }
+		 logger.info("init from server, save "+localweathers.length+" mesures");
+		 */
 	}
 	
 	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")

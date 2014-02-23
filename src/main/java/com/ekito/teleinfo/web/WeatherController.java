@@ -2,6 +2,7 @@ package com.ekito.teleinfo.web;
 
  
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -61,7 +62,7 @@ public class WeatherController {
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public @ResponseBody List<LocalWeather> all() {
 		logger.info("Listing all ...");
-		List<LocalWeather> all = weatherRepo.findAll();
+		List<LocalWeather> all = weatherRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
 		return all;
 	}
 	
@@ -84,5 +85,31 @@ public class WeatherController {
 		
 		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
 	}
+	
+	@RequestMapping(value = "/initWeatherFromServer", method = RequestMethod.GET, produces = "text/javascript;")
+	public @ResponseBody void initMesures(@RequestParam(value = "server", required = true) String server) {
+		 RestTemplate restTemplate = new RestTemplate();
+		
+		 logger.info("init from server : " + server);
+
+		 
+			 
+		 class ListWeather extends ArrayList<LocalWeather>  {  
+		 }
+		 
+		 LocalWeather[] localweathers = restTemplate.getForObject("http://54.246.90.43/weather/all", new LocalWeather[0].getClass());
+		
+		 logger.info("reset all weathers");
+		 weatherRepo.deleteAll();
+		 for (int i=0;i< localweathers.length ; i++ ){
+			 weatherRepo.save(localweathers[i]);
+			 
+		 }
+		 logger.info("init from server, save "+localweathers.length+" weather");
+		 
+	}
+	
+	
+	
 	
 }

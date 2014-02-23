@@ -20,62 +20,67 @@ $(function () {
 	var data;
         $.getJSON('http://54.246.90.43/mesure/pappAll', function(data) {
         	
-        console.log(data);	
+
       	
 
     var options = {
         chart: {
-            renderTo: 'container'
+            renderTo: 'container',
+            borderColor: '#EBBA95',
+        borderWidth: 2,
+        borderRadius: 10,
+        ignoreHiddenSeries: false
         },
         xAxis: {
             type:'datetime'
         },
+        
+        yAxis: {
+        title: {
+          text: 'Watt'
+        },
+        lineWidth: 2,
+        showLastLabel: true,
+        min: 0,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0
+        },
+        
         series: []
     };
 
     
-    var lignehchc = data.hchc;
-
-    
-     
+    var lignehchc = data.hchc;         
             options.series.push({
                 data: [],
-                name: "hchc"
-            }); 
-            
-            
+                name: "hchc",
+                 type : 'areaspline',
+          threshold : null , width : 1
+            });                        
     $.each(lignehchc, function (i, mesure) {
 		 x = mesure.date,
             y = mesure.papp;
-            options.series[0].data.push([x,y]); 
-         
+            options.series[0].data.push([x,y]);          
     	});
     	
-    	
-    	
-    
-    
-    var lignehchp = data.hchp;
-
-    
-    
+    	    	        
+    var lignehchp = data.hchp;       
             options.series.push({
                 data: [],
-                name: "hchp"
-            });
-            
-            
+                name: "hchp",
+                 type : 'areaspline',
+          threshold : null, width : 1
+            });                        
     $.each(lignehchp, function (i, mesure) {
 		 x = mesure.date,
             y = mesure.papp;
-            options.series[1].data.push([x,y]); 
-         
+            options.series[1].data.push([x,y]);          
     	});
     	
     	
 // Température
  var ligneweather = data.weather;
-     console.log("weather : "+ligneweather);         
+            
             options.series.push({
                 data: [],
                 name: "weather"
