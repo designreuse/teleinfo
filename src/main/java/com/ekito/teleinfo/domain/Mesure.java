@@ -10,7 +10,29 @@ public class Mesure {
 
     @Id
     private String id;
+	private String adco; // Adresse du concentrateur de te??le??report - 12car
+    private Integer hchc; // Index option Heures Creuses - 8car - Wh
+    private Integer hchp; // Index option Heures Pleine - 8car - Wh
+   // private Integer ejphn; // Index option EJP, Heures Normales - 8car - Wh
+   // private Integer ejphpm; // Index option EJP, Heures de Pointe Mobile - 8car - Wh
+    private	String hhphc;  // Groupe horaire si option = heures creuses ou tempo - 1 car
+    private String ptec; // Pe??riode Tarifaire en cours - 4car
+    //- TH..=> Toutes les Heures.
+    //- HC..=> Heures Creuses.
+    //- HP..=> Heures Pleines.
+    //- HN..=> Heures Normales.
+    //- PM..=> Heures de Pointe Mobile.
+
+    private Integer iinst; // Intensit?? instantan??e - 3car - A 
+    private Integer papp; // Puissance apparente - 5car - VA
+    private Integer imax; // Intensit??e max - 3 car - A
+    private String optarif; // Option tarifaire choisie - 4 car 
+    private Integer isousc; // Intensit?? souscrite - 2 car - A
+    private String motdetat; // Mot d'e??tat du compteur - 6car
+    // private String base; // Index option Base - 8car - Wh  
  
+    
+    
     public Mesure() {}
 
  
@@ -120,44 +142,24 @@ public class Mesure {
 		this.motdetat = motdetat;
 	}
 
-	private String adco; // Adresse du concentrateur de te??le??report - 12car
-    private Integer hchc; // Index option Heures Creuses - 8car - Wh
-    private Integer hchp; // Index option Heures Pleine - 8car - Wh
-   // private Integer ejphn; // Index option EJP, Heures Normales - 8car - Wh
-   // private Integer ejphpm; // Index option EJP, Heures de Pointe Mobile - 8car - Wh
-    private	String hhphc;  // Groupe horaire si option = heures creuses ou tempo - 1 car
-    private String ptec; // Pe??riode Tarifaire en cours - 4car
-    //- TH..=> Toutes les Heures.
-    //- HC..=> Heures Creuses.
-    //- HP..=> Heures Pleines.
-    //- HN..=> Heures Normales.
-    //- PM..=> Heures de Pointe Mobile.
 
-    private Integer iinst; // Intensit?? instantan??e - 3car - A 
-    private Integer papp; // Puissance apparente - 5car - VA
-    private Integer imax; // Intensit??e max - 3 car - A
-    private String optarif; // Option tarifaire choisie - 4 car 
-    private Integer isousc; // Intensit?? souscrite - 2 car - A
-    private String motdetat; // Mot d'e??tat du compteur - 6car
-    // private String base; // Index option Base - 8car - Wh  
- 
 
 
     public Mesure(String pId, String pAdco, Integer pHchc, Integer pHcHp, 
     		String pHhphc, String pPtec, 
     		Integer pIinst, Integer pPapp, Integer pImax, String pOptarif, Integer pIsousc, String pMotdetat) {
         this.id = pId;
-        this.adco = pAdco;
+        this.adco = pAdco.substring(0,11);
         this.hchc =pHchc ;
         this.hchp = pHcHp ;
-        this.hhphc = pHhphc ;
-        this.ptec = pPtec;
+        this.hhphc = pHhphc.substring(0,0) ;
+        this.ptec = pPtec.substring(0,3);
         this.iinst = pIinst ;
         this.papp = pPapp;
         this.imax = pImax;
-        this.optarif = pOptarif;
+        this.optarif = pOptarif.substring(0,3);
         this.isousc = pIsousc;
-        this.motdetat = pMotdetat;
+        this.motdetat = pMotdetat.substring(0,9);
         this.date = new Date(new Date().getTime()+60*60*1000);// ajout d'une heure, TODO voir pb heure UTC 
         
         
