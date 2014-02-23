@@ -8,9 +8,6 @@ import java.util.List;
 import java.util.Calendar;
 
 
-
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-import static org.springframework.data.mongodb.core.query.Query.query;
+import org.springframework.web.client.RestTemplate;
 
 import com.ekito.teleinfo.domain.Mesure;
 import com.ekito.teleinfo.repository.MesureRepository;
 import com.ekito.teleinfo.resources.mesure.Papp;
+
 
 @Controller
 @RequestMapping("/mesure")
@@ -107,6 +103,20 @@ public class MesureController {
 		
 		
 		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
+	}
+	
+	@RequestMapping(value = "/init", method = RequestMethod.GET, produces = "text/javascript;")
+	public @ResponseBody void initMesures() {
+		 RestTemplate restTemplate = new RestTemplate();
+		 List<Mesure> mesures = restTemplate.getForObject("http://http://54.246.90.43/mesure/all", List.class);
+	    
+		 Iterator<Mesure> iterator = mesures.iterator();
+			while (iterator.hasNext()) {
+			 mesureRepo.save(iterator.next());
+			}
+
+	   
+			logger.info("init mesure save");
 	}
 	
 	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
