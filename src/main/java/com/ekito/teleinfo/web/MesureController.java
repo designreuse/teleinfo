@@ -47,7 +47,7 @@ public class MesureController {
 	
 		return all;
 	}
-	
+	 
 	@RequestMapping(value = "/pappIntraday", method = RequestMethod.GET)
 	public @ResponseBody Papp pappIntraday() {
 		logger.info("Listing pappIntraday ...");
