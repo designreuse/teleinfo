@@ -20,7 +20,9 @@ void sendTeleinfoBasic() {
   //p.runShellCommand(buffer); 
   
   if (HCHC != 0 && HCHP!=0) {
-   sprintf(buffer, "curl 'http://54.246.90.43/mesure/create?adco=%c&hchc=%ld&hchp=%ld&hhphc=%c&ptec=%c&iinst=%i&papp=%ld&imax=%ld&optarif=%c&isousc=%i&motdetat=%c'",ADCO,HCHC,HCHP,HHPHC,PTEC,IINST,PAPP,IMAX,OPTARIF,ISOUSC,MOTDETAT);
+    //String sADCO(ADCO); //sADCO.substring(0,11)
+    
+   sprintf(buffer, "curl 'http://54.246.90.43/mesure/create?adco=%s&hchc=%ld&hchp=%ld&hhphc=%s&ptec=%s&iinst=%i&papp=%ld&imax=%ld&optarif=%s&isousc=%i&motdetat=%s'", ADCO,HCHC,HCHP,HHPHC,PTEC,IINST,PAPP,IMAX,OPTARIF,ISOUSC,MOTDETAT);
    Console.print("buffer:");
    
   

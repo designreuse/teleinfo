@@ -304,58 +304,61 @@ int affecteEtiquette(char *etiquette, char *valeur) {
 
   if (strcmp(etiquette, "ADCO") == 0) {
     memset(ADCO, '\0', 12); memcpy(ADCO, valeur, strlen(valeur)); check[1] = 1;
-    Serial.print("ADCO="); Serial.println(ADCO);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print(F("ADCO=")); Serial.println(ADCO);
+    //Serial.print(F("valeur=")); Serial.println(valeur);
   }
   else if (strcmp(etiquette, "HCHC") == 0) {
     HCHC = atol(valeur); check[2] = 1;
-    Serial.print("HCHC="); Serial.println(HCHC);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("HCHC="); Serial.println(HCHC);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(etiquette, "HCHP") == 0) {
     HCHP = atol(valeur); check[3] = 1;
-    Serial.print("HCHP="); Serial.println(HCHP);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("HCHP="); Serial.println(HCHP);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(etiquette, "HHPHC") == 0) {
     memset(HHPHC, '\0', 2); strcpy(HHPHC, valeur); check[4] = 1;
-    Serial.print("HHPHC="); Serial.println(HHPHC);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("HHPHC="); Serial.println(HHPHC);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(etiquette, "PTEC") == 0) {
     memset(PTEC, '\0', 4); memcpy(PTEC, valeur, strlen(valeur)); check[5] = 1;
-    Serial.print("PTEC="); Serial.println(PTEC);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("PTEC="); Serial.println(PTEC);
+    //Serial.print("valeur="); Serial.println(valeur);
+    
+    //Console.print("PTEC="); Console.println(PTEC);
+    //Console.print("valeur="); Console.println(valeur);
   }
   else if (strcmp(Etiquette, "IINST") == 0) {
     IINST = atoi(valeur); check[6] = 1;
-    Serial.print("IINST="); Serial.println(IINST);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("IINST="); Serial.println(IINST);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(Etiquette, "PAPP") == 0) {
     PAPP = atol(valeur); check[7] = 1;
-    Serial.print(F("PAPP=")); Serial.println(PAPP);
-    Serial.print(F("valeur=")); Serial.println(valeur);
+    //Serial.print(F("PAPP=")); Serial.println(PAPP);
+    //Serial.print(F("valeur=")); Serial.println(valeur);
   }
   else if (strcmp(Etiquette, "IMAX") == 0) {
     IMAX = atol(valeur); check[8] = 1;
-    Serial.print("IMAX="); Serial.println(IMAX);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("IMAX="); Serial.println(IMAX);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(Etiquette, "OPTARIF") == 0) {
     memset(OPTARIF, '\0', 4); memcpy(OPTARIF, valeur, strlen(valeur)); check[9] = 1;
-    Serial.print("OPTARIF="); Serial.println(OPTARIF);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("OPTARIF="); Serial.println(OPTARIF);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(Etiquette, "ISOUSC") == 0) {
     ISOUSC = atoi(valeur); check[10] = 1;
-    Serial.print("ISOUSC="); Serial.println(ISOUSC);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("ISOUSC="); Serial.println(ISOUSC);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(Etiquette, "MOTDETAT") == 0) {
     memset(MOTDETAT, '\0', 10); memcpy(MOTDETAT, valeur, strlen(valeur)); check[0] = 1;
-    Serial.print("MOTDETAT="); Serial.println(MOTDETAT);
-    Serial.print("valeur="); Serial.println(valeur);
+    //Serial.print("MOTDETAT="); Serial.println(MOTDETAT);
+    //Serial.print("valeur="); Serial.println(valeur);
   }
   else
     return 0;
