@@ -1,12 +1,12 @@
 package com.ekito.teleinfo.web;
 
  
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Calendar;
-
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +55,7 @@ public class MesureController {
 		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
 
 		List<Mesure> hc = mesureRepo.findByDateGreaterThanOnlyHC(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
-		List<Mesure> hp = mesureRepo.findByDateGreaterThanOnlyHC(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> hp = mesureRepo.findByDateGreaterThanOnlyHP(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
 		
 		Papp papp = new Papp();
 		papp.setHchc(hc);
@@ -105,18 +105,23 @@ public class MesureController {
 		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
 	}
 	
-	@RequestMapping(value = "/init", method = RequestMethod.GET, produces = "text/javascript;")
+	@RequestMapping(value = "/initFromServer", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody void initMesures() {
 		 RestTemplate restTemplate = new RestTemplate();
-		 List<Mesure> mesures = restTemplate.getForObject("http://http://54.246.90.43/mesure/all", List.class);
-	    
-		 Iterator<Mesure> iterator = mesures.iterator();
-			while (iterator.hasNext()) {
-			 mesureRepo.save(iterator.next());
-			}
-
-	   
-			logger.info("init mesure save");
+		
+		 class ListMesure extends ArrayList<Mesure>  {  
+			 
+		 }
+		 
+		 Mesure[] mesures = restTemplate.getForObject("http://54.246.90.43/mesure/all", new Mesure[0].getClass());
+		
+		 logger.info("reset all mesures");
+		 mesureRepo.deleteAll();
+		 for (int i=0;i< mesures.length ; i++ ){
+			 mesureRepo.save(mesures[i]);
+			 
+		 }
+		 logger.info("init from server, save "+mesures.length+" elements");
 	}
 	
 	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
