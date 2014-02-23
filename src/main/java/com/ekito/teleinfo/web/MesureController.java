@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.ekito.teleinfo.domain.LocalWeather;
 import com.ekito.teleinfo.domain.Mesure;
 import com.ekito.teleinfo.repository.MesureRepository;
+import com.ekito.teleinfo.repository.WeatherRepository;
 import com.ekito.teleinfo.resources.mesure.Papp;
 
 
@@ -34,7 +36,8 @@ public class MesureController {
 	@Autowired
 	MesureRepository mesureRepo;
 	
- 
+	@Autowired
+	WeatherRepository weatherRepo;
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> all() {
@@ -70,12 +73,15 @@ public class MesureController {
 		logger.info("Listing pappAll ...");
 		
 	  
-		List<Mesure> hc = mesureRepo.findByDateGreaterThanOnlyHC(new Date(0),new Sort(Sort.Direction.ASC, "date"));
-		List<Mesure> hp = mesureRepo.findByDateGreaterThanOnlyHP(new Date(0),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> hc = mesureRepo.findOnlyHC(new Date(0),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> hp = mesureRepo.findOnlyHP(new Date(0),new Sort(Sort.Direction.ASC, "date"));
+		
+		List<LocalWeather> weather = weatherRepo.findAll();
 		
 		Papp papp = new Papp();
 		papp.setHchc(hc);
 		papp.setHchp(hp);
+		papp.setWeather(weather);
 		
 		return papp;
 	}

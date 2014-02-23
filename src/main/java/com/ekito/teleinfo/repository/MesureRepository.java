@@ -22,7 +22,14 @@ public interface MesureRepository extends MongoRepository<Mesure, String> {
     @Query("{ 'date' : { '$gt' : ?0 } , 'ptec' : 'HC..'}")
     public List<Mesure> findByDateGreaterThanOnlyHC(Date date, Sort sort);
     
-    @Query("{ 'date' : { '$gt' : ?0 } , 'ptec' : 'HP..'}")
+    @Query("{ 'date' : { '$gt' : ?0 } , 'ptec' : { $ne: 'HC..' }}")
     public List<Mesure> findByDateGreaterThanOnlyHP(Date date, Sort sort);
+    
+    @Query("{ 'ptec' : 'HC..'}")
+    public List<Mesure> findOnlyHC(Date date, Sort sort);
+    
+    @Query("{ 'ptec' :  { $ne: 'HC..' }}")
+    public List<Mesure> findOnlyHP(Date date, Sort sort);
+    
     
 }
