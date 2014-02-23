@@ -65,6 +65,23 @@ public class MesureController {
 	}
 	
 	
+	@RequestMapping(value = "/pappAll", method = RequestMethod.GET)
+	public @ResponseBody Papp pappAll() {
+		logger.info("Listing pappAll ...");
+		
+	  
+		List<Mesure> hc = mesureRepo.findByDateGreaterThanOnlyHC(new Date(0),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> hp = mesureRepo.findByDateGreaterThanOnlyHP(new Date(0),new Sort(Sort.Direction.ASC, "date"));
+		
+		Papp papp = new Papp();
+		papp.setHchc(hc);
+		papp.setHchp(hp);
+		
+		return papp;
+	}
+	
+	
+	
 
 	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> intraday() {
