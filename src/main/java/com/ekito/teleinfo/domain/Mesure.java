@@ -159,7 +159,7 @@ public class Mesure {
         this.imax = pImax;
         this.optarif = pOptarif.substring(0,3);
         this.isousc = pIsousc;
-        this.motdetat = pMotdetat.substring(0,9);
+        this.motdetat = pMotdetat;
         this.date = new Date(new Date().getTime()+60*60*1000);// ajout d'une heure, TODO voir pb heure UTC 
         
         
