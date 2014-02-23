@@ -10,6 +10,7 @@ import java.util.Calendar;
 
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import static org.springframework.data.mongodb.core.query.Query.query;
 
 import com.ekito.teleinfo.domain.Mesure;
 import com.ekito.teleinfo.repository.MesureRepository;
+import com.ekito.teleinfo.resources.mesure.Papp;
 
 @Controller
 @RequestMapping("/mesure")
@@ -45,6 +47,27 @@ public class MesureController {
 	
 		return all;
 	}
+	
+	@RequestMapping(value = "/pappIntraday", method = RequestMethod.GET)
+	public @ResponseBody Papp pappIntraday() {
+		logger.info("Listing pappIntraday ...");
+		
+		Calendar calendar = Calendar.getInstance();
+	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
+		
+
+		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
+
+		List<Mesure> hc = mesureRepo.findByDateGreaterThanOnlyHC(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> hp = mesureRepo.findByDateGreaterThanOnlyHC(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
+		
+		Papp papp = new Papp();
+		papp.setHchc(hc);
+		papp.setHchp(hp);
+		
+		return papp;
+	}
+	
 	
 
 	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
@@ -148,6 +171,50 @@ public class MesureController {
 		
 		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
 	}
+	
+	@RequestMapping(value = "/graphintraday_hphc", method = RequestMethod.GET, produces = "text/javascript;")
+	public @ResponseBody String intraday_mesures_hphc(@RequestParam(value = "callback", required = true) String callback) {
+		logger.info("Listing all ...");
+		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
+		//List<String> allString = new ArrayList<String>();
+		String allString ="";
+		Iterator<Mesure> iterator = all.iterator();
+		Mesure previousMesure = null;
+		boolean tarifHC= false;
+		Integer pappHC=0,pappHP=0;
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			Date date =  mesure.getDate();
+			if (previousMesure != null && mesure != null )
+				if (mesure.getHchc()!= null && previousMesure.getHchc()!= null)
+			{
+				 
+				if (mesure.getHchc() > 
+				previousMesure.getHchc()) 
+					tarifHC = true; else tarifHC=false;
+			}
+			if (tarifHC) {
+				pappHC = mesure.getPapp(); 
+				pappHP = 0;
+			}
+			else
+			{
+				pappHC = 0;
+				pappHP = mesure.getPapp();
+			}
+			if (date!=null)
+			{
+				
+			allString += "["+date.getTime()+","+ pappHC+"],";
+			}
+			previousMesure = mesure;
+		}
+		
+		
+		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
+	}
+	
 	
 	@RequestMapping(value = "/graphall_hphp", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody String all_mesures_hphp(@RequestParam(value = "callback", required = true) String callback) {

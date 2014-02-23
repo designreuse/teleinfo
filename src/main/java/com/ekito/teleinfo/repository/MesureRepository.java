@@ -19,4 +19,10 @@ public interface MesureRepository extends MongoRepository<Mesure, String> {
     @Query("{ 'date' : { '$gt' : ?0 }}")
     public List<Mesure> findByDateGreaterThan(Date date, Sort sort);
     
+    @Query("{ 'date' : { '$gt' : ?0 } , 'hchc' : { '$gt' : 0 }}")
+    public List<Mesure> findByDateGreaterThanOnlyHC(Date date, Sort sort);
+    
+    @Query("{ 'date' : { '$gt' : ?0 } , 'hchp' : { '$gt' : 0 } }")
+    public List<Mesure> findByDateGreaterThanOnlyHP(Date date, Sort sort);
+    
 }
