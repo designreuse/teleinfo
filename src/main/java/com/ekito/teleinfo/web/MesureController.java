@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +29,7 @@ import com.ekito.teleinfo.resources.mesure.Papp;
 
 
 @Controller
+ 
 @RequestMapping("/mesure")
 public class MesureController {
 	
@@ -39,6 +42,14 @@ public class MesureController {
 	@Autowired
 	WeatherRepository weatherRepo;
 
+ 
+	@RequestMapping(value = "/deleteAllNull", method = RequestMethod.GET)
+	public @ResponseBody void deleteAllNull() {
+		logger.info("deleteAllNull...");
+		List<Mesure> all = mesureRepo.findByDateNull();
+		mesureRepo.delete(all);
+	}
+	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public @ResponseBody List<Mesure> all() {
 		logger.info("Listing all ...");

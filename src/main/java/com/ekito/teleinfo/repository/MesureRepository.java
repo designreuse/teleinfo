@@ -31,5 +31,8 @@ public interface MesureRepository extends MongoRepository<Mesure, String> {
     @Query("{ 'ptec' :  { $ne: 'HC..' }}")
     public List<Mesure> findOnlyHP(Date date, Sort sort);
     
+    @Query("{ 'date' :  null }")
+    public List<Mesure> findByDateNull();
+    
     
 }
