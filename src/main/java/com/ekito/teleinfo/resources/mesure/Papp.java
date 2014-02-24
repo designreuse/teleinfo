@@ -9,7 +9,7 @@ import com.ekito.teleinfo.domain.Mesure;
 
 public class Papp {
 
-	
+	List<Mesure> all = new ArrayList<Mesure>();
 	List<Mesure> hchc = new ArrayList<Mesure>();
 	List<Mesure> hchp = new ArrayList<Mesure>();
 	List<LocalWeather> weather = new ArrayList<LocalWeather>();
@@ -32,5 +32,11 @@ public class Papp {
 	}
 	public void setWeather(List<LocalWeather> weather) {
 		this.weather = weather;
+	}
+	public List<Mesure> getAll() {
+		return all;
+	}
+	public void setAll(List<Mesure> all) {
+		this.all = all;
 	}
 }

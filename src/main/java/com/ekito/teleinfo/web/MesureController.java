@@ -86,6 +86,27 @@ public class MesureController {
 		return papp;
 	}
 	
+	@RequestMapping(value = "/allDetail", method = RequestMethod.GET)
+	public @ResponseBody Papp allDetail() {
+		logger.info("Listing allDetail ...");
+		
+		//mesureRepo.delete("5304b4fae4b0c4b5c55a8497");
+		//mesureRepo.delete("5304b150e4b044aa10c35312");
+		
+		
+		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
+		 
+		List<LocalWeather> weather = weatherRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
+		
+		Papp papp = new Papp();
+		papp.setAll(all);
+		
+		papp.setWeather(weather);
+		
+		return papp;
+	}
+	
+	
 	
 	
 

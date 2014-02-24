@@ -12,13 +12,14 @@
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
 
-<div id="container" style="min-width: 210px; height: 550px; margin: 0 auto; "></div>
+<div id="container" style="min-width: 210px; height: 650px; margin: 0 auto; "></div>
  
 
         <script type="text/javascript">
 $(function () {
 	var data;
-        $.getJSON('http://54.246.90.43/mesure/pappAll', function(data) {
+	 $.getJSON('http://54.246.90.43/mesure/allDetail', function(data) { 
+<!--        $.getJSON('http://localhost:9000/mesure/pappAll', function(data) {--!>
         	
 
       	
@@ -27,75 +28,98 @@ $(function () {
         chart: {
             renderTo: 'container',
             borderColor: '#EBBA95',
-        borderWidth: 2,
-        borderRadius: 10,
-        ignoreHiddenSeries: false
+        borderWidth: 2
+        
+       
         },
         xAxis: {
             type:'datetime'
         },
         
-        yAxis: {
+        yAxis: [{
         title: {
           text: 'Watt'
         },
         lineWidth: 2,
         showLastLabel: true,
         min: 0,
+        height: 350,
         alternateGridColor: '#FDFFD5',
         minorGridLineWidth: 0
+        },{title: {
+          text: 'temp'
         },
+        lineWidth: 2,
+        top: 400,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0},
+        {title: {
+          text: 'cloud'
+        },
+        lineWidth: 2,
+        top: 400,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0}
+        ],
         
         series: []
     };
 
-    
-    var lignehchc = data.hchc;         
+        var dataall = data.all;  
+           
             options.series.push({
                 data: [],
                 name: "hchc",
                  type : 'areaspline',
-          threshold : null , width : 1
-            });                        
-    $.each(lignehchc, function (i, mesure) {
-		 x = mesure.date,
-            y = mesure.papp;
-            options.series[0].data.push([x,y]);          
-    	});
-    	
-    	    	        
-    var lignehchp = data.hchp;       
-            options.series.push({
+          width : 1, yAxis: 0            });   
+          
+          options.series.push({
                 data: [],
                 name: "hchp",
                  type : 'areaspline',
-          threshold : null, width : 1
-            });                        
-    $.each(lignehchp, function (i, mesure) {
+          width : 1, yAxis: 0            });                                      
+          
+          
+          
+          
+    $.each(dataall, function (i, mesure) {
 		 x = mesure.date,
             y = mesure.papp;
-            options.series[1].data.push([x,y]);          
+            if (mesure.ptec.substr(0,2) == "HC") 
+                { 
+            	options.series[1].data.push([x,y]); options.series[0].data.push([x,null]); }
+            else {
+            	 
+            	options.series[0].data.push([x,y]); options.series[1].data.push([x,null]);}
     	});
-    	
+    	     	
     	
 // Température
  var ligneweather = data.weather;
             
             options.series.push({
                 data: [],
-                name: "weather"
+                name: "weather", yAxis: 1
             });  
              options.series.push({
                 data: [],
-                name: "cloud"
+                name: "cloud", yAxis: 2
             });                        
     $.each(ligneweather, function (i, weather) {
 		 x = weather.date,
-            y = weather.temp*100;
-            options.series[2].data.push([x,y]); 
+            y = weather.temp;
+            if (x>0) options.series[2].data.push([x,y]); 
              x = weather.date,
-            y = weather.cloud*100;
-            options.series[3].data.push([x,y]); 
+            y = weather.cloud;
+            if( x>0) options.series[3].data.push([x,y]); 
          
     	});
     
@@ -116,4 +140,4 @@ $(function () {
         </head>
     <body>
    </body>
-</html>
+</html>	
