@@ -149,7 +149,7 @@ public class Mesure {
     		String pHhphc, String pPtec, 
     		Integer pIinst, Integer pPapp, Integer pImax, String pOptarif, Integer pIsousc, String pMotdetat) {
         this.id = pId;
-        this.adco = pAdco.substring(0,12);
+        this.adco = pAdco.substring(0,11);
         this.hchc =pHchc ;
         this.hchp = pHcHp ;
         this.hhphc = pHhphc.substring(0,1) ;
