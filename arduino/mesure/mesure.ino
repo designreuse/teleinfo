@@ -303,7 +303,7 @@ int affecteEtiquette(char *etiquette, char *valeur) {
 
 
   if (strcmp(etiquette, "ADCO") == 0) {
-    memset(ADCO, '\0', 12); memcpy(ADCO, valeur, strlen(valeur)); check[1] = 1;
+    memset(ADCO, '\0', 12); memcpy(ADCO, valeur, 12); check[1] = 1;
     //Serial.print(F("ADCO=")); Serial.println(ADCO);
     //Serial.print(F("valeur=")); Serial.println(valeur);
   }
@@ -323,7 +323,7 @@ int affecteEtiquette(char *etiquette, char *valeur) {
     //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(etiquette, "PTEC") == 0) {
-    memset(PTEC, '\0', 4); memcpy(PTEC, valeur, strlen(valeur)); check[5] = 1;
+    memset(PTEC, '\0', 4); memcpy(PTEC, valeur, 4); check[5] = 1;
     //Serial.print("PTEC="); Serial.println(PTEC);
     //Serial.print("valeur="); Serial.println(valeur);
     
@@ -346,7 +346,7 @@ int affecteEtiquette(char *etiquette, char *valeur) {
     //Serial.print("valeur="); Serial.println(valeur);
   }
   else if (strcmp(Etiquette, "OPTARIF") == 0) {
-    memset(OPTARIF, '\0', 4); memcpy(OPTARIF, valeur, strlen(valeur)); check[9] = 1;
+    memset(OPTARIF, '\0', 4); memcpy(OPTARIF, valeur, 4); check[9] = 1;
     //Serial.print("OPTARIF="); Serial.println(OPTARIF);
     //Serial.print("valeur="); Serial.println(valeur);
   }
