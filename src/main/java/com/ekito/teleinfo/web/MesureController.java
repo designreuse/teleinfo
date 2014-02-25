@@ -25,7 +25,8 @@ import com.ekito.teleinfo.domain.LocalWeather;
 import com.ekito.teleinfo.domain.Mesure;
 import com.ekito.teleinfo.repository.MesureRepository;
 import com.ekito.teleinfo.repository.WeatherRepository;
-import com.ekito.teleinfo.resources.mesure.Papp;
+import com.ekito.teleinfo.resources.mesure.MesureRessource;
+import com.ekito.teleinfo.resources.mesure.Page;
 
 
 @Controller
@@ -38,6 +39,9 @@ public class MesureController {
 
 	@Autowired
 	MesureRepository mesureRepo;
+	
+	@Autowired
+	WeatherController weatherController;
 	
 	@Autowired
 	WeatherRepository weatherRepo;
@@ -58,109 +62,71 @@ public class MesureController {
 		return all;
 	}
 	 
-	@RequestMapping(value = "/pappIntraday", method = RequestMethod.GET)
-	public @ResponseBody Papp pappIntraday() {
-		logger.info("Listing pappIntraday ...");
-		
-		Calendar calendar = Calendar.getInstance();
-	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
-		
-
-		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
-
-		List<Mesure> hc = mesureRepo.findByDateGreaterThanOnlyHC(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
-		List<Mesure> hp = mesureRepo.findByDateGreaterThanOnlyHP(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
-		
-		Papp papp = new Papp();
-		papp.setHchc(hc);
-		papp.setHchp(hp);
-		
-		return papp;
-	}
-	
-	
-	@RequestMapping(value = "/pappAll", method = RequestMethod.GET)
-	public @ResponseBody Papp pappAll() {
-		logger.info("Listing pappAll ...");
-		
-	  
-		List<Mesure> hc = mesureRepo.findOnlyHC(new Date(0),new Sort(Sort.Direction.ASC, "date"));
-		List<Mesure> hp = mesureRepo.findOnlyHP(new Date(0),new Sort(Sort.Direction.ASC, "date"));
-		
-		List<LocalWeather> weather = weatherRepo.findAll();
-		
-		Papp papp = new Papp();
-		papp.setHchc(hc);
-		papp.setHchp(hp);
-		papp.setWeather(weather);
-		
-		return papp;
-	}
+	 
+ 
 	
 	@RequestMapping(value = "/allDetail", method = RequestMethod.GET)
-	public @ResponseBody Papp allDetail() {
+	public @ResponseBody Page allDetail() {
 		logger.info("Listing allDetail ...");
 		
-		//mesureRepo.delete("5304b4fae4b0c4b5c55a8497");
-		//mesureRepo.delete("5304b150e4b044aa10c35312");
-		
+	  	
 		
 		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		 
-		List<LocalWeather> weather = weatherRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		
-		Papp papp = new Papp();
-		papp.setAll(all);
-		
-		papp.setWeather(weather);
-		
-		return papp;
-	}
-	
-	
-	
-	
-
-	@RequestMapping(value = "/intraday", method = RequestMethod.GET)
-	public @ResponseBody List<Mesure> intraday() {
-		logger.info("Listing intraday ...");
-		
-		Calendar calendar = Calendar.getInstance();
-	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
-		
-
-		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
-
-		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
-		return all;
-	}
-	 
-	@RequestMapping(value = "/graphintraday", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody String mesuresIntraday(@RequestParam(value = "callback", required = true) String callback) {
-		logger.info("Listing all ...");
-	    
-		Calendar calendar = Calendar.getInstance();
-	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
-		
-
-		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()),new Sort(Sort.Direction.ASC, "date"));
-		//List<String> allString = new ArrayList<String>();
-		String allString ="";
+		List<MesureRessource> mesureRessources = new ArrayList<MesureRessource>();	
 		Iterator<Mesure> iterator = all.iterator();
 		while (iterator.hasNext()) {
 			
 			Mesure mesure = iterator.next();
-			Date date =  mesure.getDate();
-			if (date!=null)
-			allString += "["+date.getTime()+","+ mesure.getPapp()+"],";
-			
+			mesureRessources.add(new MesureRessource(mesure.getPtec(), mesure.getPapp(), mesure.getDate()));
 		}
 		
+	
+		List<LocalWeather> weather = weatherRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
 		
-		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
+		Page page = new Page();
+		page.setAll(mesureRessources);
+		
+		page.setWeather(weather);
+		
+		return page;
 	}
 	
-	@RequestMapping(value = "/initFromServer", method = RequestMethod.GET, produces = "text/javascript;")
+	@RequestMapping(value = "/intradayDetail", method = RequestMethod.GET)
+	public @ResponseBody Page intradayDetail() {
+		logger.info("Listing intradayDetail ...");
+		
+ 
+		Calendar calendar = Calendar.getInstance();
+	    Calendar startDay = new GregorianCalendar(calendar.get( Calendar.YEAR ),calendar.get( Calendar.MONTH ),calendar.get( Calendar.DAY_OF_MONTH ));
+		
+
+		logger.info("today we are: "+ new Date(startDay.getTimeInMillis()));
+
+		
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()), new Sort(Sort.Direction.ASC, "date"));
+		 
+		List<MesureRessource> mesureRessources = new ArrayList<MesureRessource>();	
+		Iterator<Mesure> iterator = all.iterator();
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			mesureRessources.add(new MesureRessource(mesure.getPtec(), mesure.getPapp(), mesure.getDate()));
+		}
+		
+		List<LocalWeather> weather = weatherRepo.findByDateGreaterThan(new Date(startDay.getTimeInMillis()), new Sort(Sort.Direction.ASC, "date"));
+		
+		Page page = new Page();
+		page.setAll(mesureRessources);
+		
+		page.setWeather(weather);
+		
+		return page;
+	}
+ 
+	 
+	 
+	
+	@RequestMapping(value = "/initMesureFromServer", method = RequestMethod.GET, produces = "text/javascript;")
 	public @ResponseBody void initMesures(@RequestParam(value = "server", required = true) String server) {
 		 RestTemplate restTemplate = new RestTemplate();
 		
@@ -178,173 +144,20 @@ public class MesureController {
 			 mesureRepo.save(mesures[i]);
 			 
 		 }
-		 logger.info("init from server, save "+mesures.length+" weathers");
-		 /*
-			 
-		 class ListWeather extends ArrayList<LocalWeather>  {  
-		 }
+		 logger.info("init from server, save "+mesures.length+" mesures");
+		
+	}
+	
+	@RequestMapping(value = "/initAllFromServer", method = RequestMethod.GET, produces = "text/javascript;")
+	public @ResponseBody void initAll(@RequestParam(value = "server", required = true) String server) {
+		
+		this.initMesures(server);
+		weatherController.initWeather(server);
 		 
-		 LocalWeather[] localweathers = restTemplate.getForObject("http://54.246.90.43/weather/all", new LocalWeather[0].getClass());
-		
-		 logger.info("reset all weathers");
-		 weatherRepo.deleteAll();
-		 for (int i=0;i< localweathers.length ; i++ ){
-			 weatherRepo.save(localweathers[i]);
-			 
-		 }
-		 logger.info("init from server, save "+localweathers.length+" mesures");
-		 */
 	}
 	
-	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody String all_mesures(@RequestParam(value = "callback", required = true) String callback) {
-		logger.info("Listing all ...");
-		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		//List<String> allString = new ArrayList<String>();
-		String allString ="";
-		Iterator<Mesure> iterator = all.iterator();
-		while (iterator.hasNext()) {
-			
-			Mesure mesure = iterator.next();
-			Date date =  mesure.getDate();
-			if (date!=null)
-			allString += "["+date.getTime()+","+ mesure.getPapp()+"],";
-			
-		}
-		
-		
-		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
-	}
+ 
 	
-	@RequestMapping(value = "/graphall_hphc", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody String all_mesures_hphc(@RequestParam(value = "callback", required = true) String callback) {
-		logger.info("Listing all ...");
-		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		//List<String> allString = new ArrayList<String>();
-		String allString ="";
-		Iterator<Mesure> iterator = all.iterator();
-		Mesure previousMesure = null;
-		boolean tarifHC= false;
-		Integer pappHC=0,pappHP=0;
-		while (iterator.hasNext()) {
-			
-			Mesure mesure = iterator.next();
-			Date date =  mesure.getDate();
-			if (previousMesure != null && mesure != null )
-				if (mesure.getHchc()!= null && previousMesure.getHchc()!= null)
-			{
-				 
-				if (mesure.getHchc() > 
-				previousMesure.getHchc()) 
-					tarifHC = true; else tarifHC=false;
-			}
-			if (tarifHC) {
-				pappHC = mesure.getPapp(); 
-				pappHP = 0;
-			}
-			else
-			{
-				pappHC = 0;
-				pappHP = mesure.getPapp();
-			}
-			if (date!=null)
-			{
-				
-			allString += "["+date.getTime()+","+ pappHC+"],";
-			}
-			previousMesure = mesure;
-		}
-		
-		
-		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
-	}
-	
-	@RequestMapping(value = "/graphintraday_hphc", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody String intraday_mesures_hphc(@RequestParam(value = "callback", required = true) String callback) {
-		logger.info("Listing all ...");
-		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		//List<String> allString = new ArrayList<String>();
-		String allString ="";
-		Iterator<Mesure> iterator = all.iterator();
-		Mesure previousMesure = null;
-		boolean tarifHC= false;
-		Integer pappHC=0,pappHP=0;
-		while (iterator.hasNext()) {
-			
-			Mesure mesure = iterator.next();
-			Date date =  mesure.getDate();
-			if (previousMesure != null && mesure != null )
-				if (mesure.getHchc()!= null && previousMesure.getHchc()!= null)
-			{
-				 
-				if (mesure.getHchc() > 
-				previousMesure.getHchc()) 
-					tarifHC = true; else tarifHC=false;
-			}
-			if (tarifHC) {
-				pappHC = mesure.getPapp(); 
-				pappHP = 0;
-			}
-			else
-			{
-				pappHC = 0;
-				pappHP = mesure.getPapp();
-			}
-			if (date!=null)
-			{
-				
-			allString += "["+date.getTime()+","+ pappHC+"],";
-			}
-			previousMesure = mesure;
-		}
-		
-		
-		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
-	}
-	
-	
-	@RequestMapping(value = "/graphall_hphp", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody String all_mesures_hphp(@RequestParam(value = "callback", required = true) String callback) {
-		logger.info("Listing all ...");
-		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		//List<String> allString = new ArrayList<String>();
-		String allString ="";
-		Iterator<Mesure> iterator = all.iterator();
-		Mesure previousMesure = null;
-		boolean tarifHC= false;
-		Integer pappHC=0,pappHP=0;
-		while (iterator.hasNext()) {
-			
-			Mesure mesure = iterator.next();
-			Date date =  mesure.getDate();
-			if (previousMesure != null && mesure != null )
-				if (mesure.getHchc()!= null && previousMesure.getHchc()!= null)
-			{
-				 
-				if (mesure.getHchc() > 
-				previousMesure.getHchc()) 
-					tarifHC = true; else tarifHC=false;
-			}
-			if (tarifHC) {
-				pappHC = mesure.getPapp(); 
-				pappHP = 0;
-			}
-			else
-			{
-				pappHC = 0;
-				pappHP = mesure.getPapp();
-			}
-			if (date!=null)
-			{
-				
-			allString += "["+date.getTime()+","+ pappHP+"],";
-			}
-			previousMesure = mesure;
-		}
-		
-		
-		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
-	}
 
 	private void createMesure(Mesure c) {
 		mesureRepo.save(c);

@@ -1,47 +1,143 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>
-      Mesure consommation électrique
-    </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+    <link rel="shortcut icon" href="./favicon.ico" >
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Telegestione Elektra</title>
+ 
+
     <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
     
     <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
-    <script type="text/javascript">
-      $(function() {
+
+<div id="container" style="min-width: 210px; height: 650px; margin: 0 auto; "></div>
+ 
+
+        <script type="text/javascript">
+$(function () {
+	var data;
+	 $.getJSON('http://54.246.90.43/mesure/intradayDetail', function(data) { 
+	 <!--      $.getJSON('http://localhost:9000/mesure/intradayDetail', function(data) {--!>
+        	
+
+      	
+
+    var options = {
+        chart: {
+            renderTo: 'container',
+            borderColor: '#EBBA95',
+        borderWidth: 2
+        
+       
+        },
+        xAxis: {
+            type:'datetime'
+        },
+        
+        yAxis: [{
+        title: {
+          text: 'Watt'
+        },
+        lineWidth: 2,
+        showLastLabel: true,
+        min: 0,
+        height: 350,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0
+        },{title: {
+          text: 'temp'
+        },
+        lineWidth: 2,
+        top: 400,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0},
+        {title: {
+          text: 'cloud'
+        },
+        lineWidth: 2,
+        top: 400,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0}
+        ],
+        
+        series: []
+    };
+
+        var dataall = data.all;  
+           
+            options.series.push({
+                data: [],
+                name: "hchc",
+                 type : 'areaspline',
+          width : 1, yAxis: 0            });   
+          
+          options.series.push({
+                data: [],
+                name: "hchp",
+                 type : 'areaspline',
+          width : 1, yAxis: 0            });                                      
+          
+          
+          
+          
+    $.each(dataall, function (i, mesure) {
+		 x = mesure.date,
+            y = mesure.papp;
+            if (mesure.ptec.substr(0,2) == "HC") 
+                { 
+            	options.series[1].data.push([x,y]); options.series[0].data.push([x,null]); }
+            else {
+            	 
+            	options.series[0].data.push([x,y]); options.series[1].data.push([x,null]);}
+    	});
+    	     	
+    	
+// Température
+ var ligneweather = data.weather;
+            
+            options.series.push({
+                data: [],
+                name: "weather", yAxis: 1
+            });  
+             options.series.push({
+                data: [],
+                name: "cloud", yAxis: 2
+            });                        
+    $.each(ligneweather, function (i, weather) {
+		 x = weather.date,
+            y = weather.temp;
+            if (x>0) options.series[2].data.push([x,y]); 
+             x = weather.date,
+            y = weather.cloud;
+            if( x>0) options.series[3].data.push([x,y]); 
+         
+    	});
+    
+       	
 
 
+    
+       var chart = new Highcharts.StockChart(options);
+    
 
-	$.getJSON('http://54.246.90.43/mesure/graphintraday?callback=?', function(data) {
-		// Create the chart
-		$('#container').highcharts('StockChart', {
-			
 
-			rangeSelector : {
-				selected : 1
-			},
-
-			title : {
-				text : 'Mesure consommation électrique'
-			},
-			
-			series : [{
-				name : 'Puissance instantanée (W)',
-				data : data,
-				tooltip: {
-					valueDecimals: 0
-				}
-			}]
-		});
-	});
-
+        });
+        
+        
+         
 });
-    </script>
-  </head>
-  <body>
-    <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
-  </body>
+</script>
+        </head>
+    <body>
+   </body>
 </html>

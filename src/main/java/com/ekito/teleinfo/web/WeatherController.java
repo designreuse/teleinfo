@@ -66,28 +66,10 @@ public class WeatherController {
 		return all;
 	}
 	
-	@RequestMapping(value = "/graphall", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody String all_weather(@RequestParam(value = "callback", required = true) String callback) {
-		logger.info("Listing all weather...");
-		List<LocalWeather> all = weatherRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		//List<String> allString = new ArrayList<String>();
-		String allString ="";
-		Iterator<LocalWeather> iterator = all.iterator();
-		while (iterator.hasNext()) {
-			
-			LocalWeather weather = iterator.next();
-			Date date =  weather.getDate();
-			if (date!=null)
-			allString += "["+date.getTime()+","+ weather.getTemp()+"],";
-			
-		}
-		
-		
-		return callback+"(["+allString.replaceFirst("^*(,)$", "")+"]);";
-	}
+	 
 	
 	@RequestMapping(value = "/initWeatherFromServer", method = RequestMethod.GET, produces = "text/javascript;")
-	public @ResponseBody void initMesures(@RequestParam(value = "server", required = true) String server) {
+	public @ResponseBody void initWeather(@RequestParam(value = "server", required = true) String server) {
 		 RestTemplate restTemplate = new RestTemplate();
 		
 		 logger.info("init from server : " + server);
