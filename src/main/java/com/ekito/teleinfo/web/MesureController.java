@@ -122,6 +122,32 @@ public class MesureController {
 		
 		return page;
 	}
+	
+	@RequestMapping(value = "/fourDaysDetail", method = RequestMethod.GET)
+	public @ResponseBody Page fourDaysDetail() {
+		logger.info("Listing intradayDetail ...");
+		
+		Date fourdaysBefore = new Date(new Date().getTime()-4*24*3600*1000);
+	
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(fourdaysBefore, new Sort(Sort.Direction.ASC, "date"));
+		 
+		List<MesureRessource> mesureRessources = new ArrayList<MesureRessource>();	
+		Iterator<Mesure> iterator = all.iterator();
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			mesureRessources.add(new MesureRessource(mesure.getPtec(), mesure.getPapp(), mesure.getDate()));
+		}
+		
+		List<LocalWeather> weather = weatherRepo.findByDateGreaterThan(fourdaysBefore, new Sort(Sort.Direction.ASC, "date"));
+		
+		Page page = new Page();
+		page.setAll(mesureRessources);
+		
+		page.setWeather(weather);
+		
+		return page;
+	}
  
 	 
 	 
