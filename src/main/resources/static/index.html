@@ -3,7 +3,7 @@
     <head>
     <link rel="shortcut icon" href="./favicon.ico" >
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Telegestione Elektra</title>
+        <title>conso lolo</title>
  
 
     <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
@@ -19,7 +19,7 @@
 $(function () {
 	var data;
 	 $.getJSON('http://54.246.90.43/mesure/fourDaysDetail', function(data) { 
-	 <!--      $.getJSON('http://localhost:9000/mesure/intradayDetail', function(data) {--!>
+	 <!--      $.getJSON('http://localhost:9000/mesure/fourDaysDetail', function(data) {--!>
         	
 
       	
@@ -47,18 +47,7 @@ $(function () {
         alternateGridColor: '#FDFFD5',
         minorGridLineWidth: 0
         },{title: {
-          text: 'temp'
-        },
-        lineWidth: 2,
-        top: 400,
-                height: 100,
-                offset: 0,
-        showLastLabel: true,
-        min: 0,
-        alternateGridColor: '#FDFFD5',
-        minorGridLineWidth: 0},
-        {title: {
-          text: 'cloud'
+          text: 'temperature'
         },
         lineWidth: 2,
         top: 400,
@@ -117,9 +106,7 @@ $(function () {
 		 x = weather.date,
             y = weather.temp;
             if (x>0) options.series[2].data.push([x,y]); 
-             x = weather.date,
-            y = weather.cloud;
-            if( x>0) options.series[3].data.push([x,y]); 
+            
          
     	});
     
