@@ -18,8 +18,8 @@
         <script type="text/javascript">
 $(function () {
 	var data;
-	 $.getJSON('http://54.246.90.43/mesure/fourDaysDetail', function(data) { 
-	 <!--      $.getJSON('http://localhost:9000/mesure/fourDaysDetail', function(data) {--!>
+	 $.getJSON('http://54.246.90.43/mesure/fourDaysDetail', function(data) {
+	 <!--      $.getJSON('http://localhost:9000/mesure/fourDaysDetail', function(data) { --!>
         	
 
       	
@@ -97,10 +97,6 @@ $(function () {
             options.series.push({
                 data: [],
                 name: "weather", yAxis: 1
-            });  
-             options.series.push({
-                data: [],
-                name: "cloud", yAxis: 2
             });                        
     $.each(ligneweather, function (i, weather) {
 		 x = weather.date,

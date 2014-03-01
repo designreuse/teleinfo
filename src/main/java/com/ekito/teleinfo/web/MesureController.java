@@ -125,7 +125,7 @@ public class MesureController {
 	
 	@RequestMapping(value = "/fourDaysDetail", method = RequestMethod.GET)
 	public @ResponseBody Page fourDaysDetail() {
-		logger.info("Listing intradayDetail ...");
+		logger.info("Listing fourDaysDetail ...");
 		
 		Date fourdaysBefore = new Date(new Date().getTime()-4*24*3600*1000);
 	
