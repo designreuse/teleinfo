@@ -16,7 +16,7 @@ public interface MesureRepository extends MongoRepository<Mesure, String> {
     public Mesure findById(String id);
     //public List<Mesure> findByLastName(String lastName);
  
-    @Query("{ 'date' : { '$gt' : ?0 }}")
+    @Query("{ 'date' : { $gt : ?0 }}")
     public List<Mesure> findByDateGreaterThan(Date date, Sort sort);
     
     @Query("{ 'date' : { '$gt' : ?0 } , 'ptec' : 'HC..'}")
@@ -33,6 +33,6 @@ public interface MesureRepository extends MongoRepository<Mesure, String> {
     
     @Query("{ 'date' :  null }")
     public List<Mesure> findByDateNull();
-    
+ 
     
 }
