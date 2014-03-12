@@ -21,10 +21,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.ekito.teleinfo.domain.CostByDay;
 import com.ekito.teleinfo.domain.LocalWeather;
 import com.ekito.teleinfo.domain.Mesure;
+import com.ekito.teleinfo.repository.DayMeasureRepository;
 import com.ekito.teleinfo.repository.MesureRepository;
 import com.ekito.teleinfo.repository.WeatherRepository;
+import com.ekito.teleinfo.resources.mesure.DayPowerRessource;
 import com.ekito.teleinfo.resources.mesure.MesureRessource;
 import com.ekito.teleinfo.resources.mesure.Page;
 
@@ -39,6 +42,9 @@ public class MesureController {
 
 	@Autowired
 	MesureRepository mesureRepo;
+	
+	@Autowired
+	DayMeasureRepository dayMeasureRepo;
 	
 	@Autowired
 	WeatherController weatherController;
@@ -73,11 +79,44 @@ public class MesureController {
 		
 		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
 		List<MesureRessource> mesureRessources = new ArrayList<MesureRessource>();	
+		List<DayPowerRessource> dayPowerRessources = new ArrayList<DayPowerRessource>();	
+		
 		Iterator<Mesure> iterator = all.iterator();
+		Mesure previousMesure = null;
+		Mesure dayLastMesure = null;
+		DayPowerRessource previousDayPower = null;
 		while (iterator.hasNext()) {
 			
 			Mesure mesure = iterator.next();
 			mesureRessources.add(new MesureRessource(mesure.getPtec(), mesure.getPapp(), mesure.getDate()));
+			
+			if (previousMesure!=null) {
+				
+				 if (!isSameDay(previousMesure.getDate(),mesure.getDate())) {
+					 if (dayLastMesure!=null){
+						 
+						 DayPowerRessource dayPower = new DayPowerRessource();
+						 dayPower.setHcDayPower(previousMesure.getHchc() - dayLastMesure.getHchc()  );
+						 dayPower.setHpDayPower(previousMesure.getHchp()- dayLastMesure.getHchp() );
+						 dayPower.setDate(previousMesure.getDate());
+						 
+						 
+						 if (previousDayPower !=null)
+						 dayPower.setPeriodHcHpTotal(previousDayPower.getPeriodHcHpTotal() + dayPower.getTotalHcHpDayCost());
+						 else
+							 dayPower.setPeriodHcHpTotal( dayPower.getTotalHcHpDayCost());
+						 dayPowerRessources.add(dayPower);
+						 previousDayPower = dayPower;
+						 
+					 }
+					 dayLastMesure = previousMesure;
+				 }
+		
+			}
+			
+			previousMesure = mesure;
+			
+			
 		}
 		
 	
@@ -88,7 +127,72 @@ public class MesureController {
 		
 		page.setWeather(weather);
 		
+		page.setDayPower(dayPowerRessources );
+		
 		return page;
+	}
+	
+	@RequestMapping(value = "/consumByDay", method = RequestMethod.GET)
+	public @ResponseBody List<DayPowerRessource> consumByDay() {
+		logger.info("Listing consumByDay ...");
+		
+		List<DayPowerRessource> dayPowerRessources = new ArrayList<DayPowerRessource>();	
+		
+		List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
+		 
+		Iterator<Mesure> iterator = all.iterator();
+		Mesure previousMesure = null;
+		Mesure dayLastMesure = null;
+		DayPowerRessource previousDayPower = null;
+		while (iterator.hasNext()) {
+			
+			Mesure mesure = iterator.next();
+			
+			if (previousMesure!=null) {
+			
+				 if (!isSameDay(previousMesure.getDate(),mesure.getDate())) {
+					 if (dayLastMesure!=null){
+						 
+						 DayPowerRessource dayPower = new DayPowerRessource();
+						 dayPower.setHcDayPower(previousMesure.getHchc() - dayLastMesure.getHchc()  );
+						 dayPower.setHpDayPower(previousMesure.getHchp()- dayLastMesure.getHchp() );
+						 dayPower.setDate(previousMesure.getDate());
+						 
+						 
+						 if (previousDayPower !=null)
+						 dayPower.setPeriodHcHpTotal(previousDayPower.getPeriodHcHpTotal() + dayPower.getTotalHcHpDayCost());
+						 else
+							 dayPower.setPeriodHcHpTotal( dayPower.getTotalHcHpDayCost());
+						 dayPowerRessources.add(dayPower);
+						 previousDayPower = dayPower;
+						 
+					 }
+					 dayLastMesure = previousMesure;
+				 }
+ 		
+ 			}
+			
+			previousMesure = mesure;
+		}
+		
+	
+	 
+		return dayPowerRessources;
+	}
+	
+	private boolean isSameDay(Date previousd, Date latestd) {
+		Calendar previousc = Calendar.getInstance();
+		previousc.setTime(previousd);
+		
+		Calendar latestc = Calendar.getInstance();
+		latestc.setTime(latestd);
+		
+		
+		Calendar startDayPrevious = new GregorianCalendar(previousc.get( Calendar.YEAR ),previousc.get( Calendar.MONTH ),previousc.get( Calendar.DAY_OF_MONTH ));
+		Calendar startDayLatest = new GregorianCalendar(latestc.get( Calendar.YEAR ),latestc.get( Calendar.MONTH ),latestc.get( Calendar.DAY_OF_MONTH ));
+		
+		if (startDayPrevious.equals(startDayLatest)  )  return true; else return false;
+		
 	}
 	
 	@RequestMapping(value = "/intradayDetail", method = RequestMethod.GET)
@@ -186,6 +290,9 @@ public class MesureController {
 	
 
 	private void createMesure(Mesure c) {
+		
+		
+		//dayMeasureRepo.save(c);
 		mesureRepo.save(c);
 		logger.info("saved : "+c);
 	}
@@ -208,6 +315,24 @@ public class MesureController {
 		   ) {
 		Mesure c = new Mesure(id,adco,new Integer(hchc),new Integer(hchp),hhphc,ptec,new Integer(iinst),new Integer(papp),new Integer(imax),optarif,new Integer(isousc),motdetat);
 		createMesure(c);
+		
+		
+		
 		return c;
 	}
+	
+	
+	
+	
+	@RequestMapping(value = "/costByDay", method = RequestMethod.GET)
+	public @ResponseBody List<Mesure> costByDay() {
+		logger.info("/costByDay...");
+		
+		List<Mesure> all = mesureRepo.magic(new Date(new Date().getTime() - 100*365*24*3600*1000),new Date());
+	
+		return all;
+	}
+	
+	
+	
 }

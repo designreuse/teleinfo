@@ -11,7 +11,7 @@ public class Page {
 
 	List<MesureRessource> all = new ArrayList<MesureRessource>();	 
 	List<LocalWeather> weather = new ArrayList<LocalWeather>();
-	
+	List<DayPowerRessource> dayPower = new ArrayList<DayPowerRessource>();
 	
 	 
 	public List<LocalWeather> getWeather() {
@@ -25,5 +25,11 @@ public class Page {
 	}
 	public void setAll(List<MesureRessource> all) {
 		this.all = all;
+	}
+	public List<DayPowerRessource> getDayPower() {
+		return dayPower;
+	}
+	public void setDayPower(List<DayPowerRessource> dayPower) {
+		this.dayPower = dayPower;
 	}
 }
