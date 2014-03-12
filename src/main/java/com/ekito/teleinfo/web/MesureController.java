@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.ekito.teleinfo.domain.CostByDay;
+ 
 import com.ekito.teleinfo.domain.LocalWeather;
 import com.ekito.teleinfo.domain.Mesure;
-import com.ekito.teleinfo.repository.DayMeasureRepository;
+
 import com.ekito.teleinfo.repository.MesureRepository;
 import com.ekito.teleinfo.repository.WeatherRepository;
 import com.ekito.teleinfo.resources.mesure.DayPowerRessource;
@@ -43,8 +43,7 @@ public class MesureController {
 	@Autowired
 	MesureRepository mesureRepo;
 	
-	@Autowired
-	DayMeasureRepository dayMeasureRepo;
+ 
 	
 	@Autowired
 	WeatherController weatherController;
