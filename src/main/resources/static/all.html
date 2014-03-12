@@ -12,14 +12,17 @@
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
 
-<div id="container" style="min-width: 210px; height: 650px; margin: 0 auto; "></div>
+<div id="container" style="min-width: 210px; height: 800px; margin: 0 auto; "></div>
  
 
         <script type="text/javascript">
 $(function () {
 	var data;
-	 $.getJSON('http://188.226.143.179/mesure/allDetail', function(data) { 
-	 <!--      $.getJSON('http://localhost:9000/mesure/allDetail', function(data) {--!>
+    
+    	 
+	<!--     $.getJSON('http://188.226.143.179/mesure/allDetail', function(data) { --!> 
+    	 $.getJSON('http://54.246.90.43/mesure/allDetail', function(data) { 
+ 	<!--    $.getJSON('http://localhost:9000/mesure/allDetail', function(data) {--!> 
         	
 
       	
@@ -37,6 +40,8 @@ $(function () {
         },
         
         yAxis: [{
+        	
+        	// 
         title: {
           text: 'Watt'
         },
@@ -46,8 +51,11 @@ $(function () {
         height: 350,
         alternateGridColor: '#FDFFD5',
         minorGridLineWidth: 0
-        },{title: {
-          text: 'temp'
+        },
+        
+        //
+        {title: {
+          text: 'temp/cloud'
         },
         lineWidth: 2,
         top: 400,
@@ -57,8 +65,10 @@ $(function () {
         min: 0,
         alternateGridColor: '#FDFFD5',
         minorGridLineWidth: 0},
+        
+        //
         {title: {
-          text: 'cloud'
+          text: ' '
         },
         lineWidth: 2,
         top: 400,
@@ -68,11 +78,54 @@ $(function () {
         min: 0,
         alternateGridColor: '#FDFFD5',
         minorGridLineWidth: 0}
+        
+        ,
+		//
+        {title: {
+          text: 'cost/day €'
+        },
+        lineWidth: 2,
+        top: 550,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        max: 20,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0},
+        //
+        {title: {
+          text: ''
+        },
+        lineWidth: 2,
+        top: 550,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        max: 20,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0},
+        //
+        {title: {
+          text: ''
+        },
+        lineWidth: 2,
+        top: 550,
+                height: 100,
+                offset: 0,
+        showLastLabel: true,
+        min: 0,
+        max: 20,
+        alternateGridColor: '#FDFFD5',
+        minorGridLineWidth: 0}
+        
+        
         ],
         
         series: []
     };
-
+// hchp
         var dataall = data.all;  
            
             options.series.push({
@@ -100,7 +153,10 @@ $(function () {
             	 
             	options.series[0].data.push([x,y]); options.series[1].data.push([x,null]);}
     	});
-    	     	
+    	  
+    
+
+    
     	
 // Température
  var ligneweather = data.weather;
@@ -123,10 +179,40 @@ $(function () {
          
     	});
     
-       	
-
-
+    // cost
+    var lignecost = data.dayPower;
     
+      
+    options.series.push({
+        data: [],
+       
+        name: "totalHcHpDayCost", yAxis: 3
+    });  
+    options.series.push({
+        data: [],
+       
+        name: "hcDayCost", yAxis: 4
+    });  
+    options.series.push({
+        data: [],
+       
+        name: "hpDayCost", yAxis: 5
+    }); 
+                      
+    $.each(lignecost, function (i, dayPower) {
+ 		 x = dayPower.date,
+           y = dayPower.totalHcHpDayCost;
+           if (x>0) options.series[4].data.push([x,y]);
+           y = dayPower.hcDayCost;
+           if (x>0) options.series[5].data.push([x,y]);
+           y = dayPower.hpDayCost;
+           if (x>0) options.series[6].data.push([x,y]);
+            
+        
+   	});  	
+
+
+    // display
        var chart = new Highcharts.StockChart(options);
     
 
