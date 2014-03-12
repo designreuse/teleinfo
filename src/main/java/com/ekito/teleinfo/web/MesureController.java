@@ -322,16 +322,7 @@ public class MesureController {
 	
 	
 	
-	
-	@RequestMapping(value = "/costByDay", method = RequestMethod.GET)
-	public @ResponseBody List<Mesure> costByDay() {
-		logger.info("/costByDay...");
-		
-		List<Mesure> all = mesureRepo.magic(new Date(new Date().getTime() - 100*365*24*3600*1000),new Date());
-	
-		return all;
-	}
-	
+	 
 	
 	
 }
