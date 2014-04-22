@@ -77,7 +77,7 @@ public class MesureController {
 	  	
 		
 		//List<Mesure> all = mesureRepo.findAll(new Sort(Sort.Direction.ASC, "date"));
-		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(System.currentTimeMillis()-25*24*60*60*1000), new Sort(Sort.Direction.ASC, "date"));
+		List<Mesure> all = mesureRepo.findByDateGreaterThan(new Date(System.currentTimeMillis()-20*24*60*60*1000), new Sort(Sort.Direction.ASC, "date"));
 		List<MesureRessource> mesureRessources = new ArrayList<MesureRessource>();	
 		List<DayPowerRessource> dayPowerRessources = new ArrayList<DayPowerRessource>();	
 		
